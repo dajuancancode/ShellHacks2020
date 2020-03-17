@@ -21,27 +21,41 @@ const HomePage = props => {
                 September 11 - 13th, 2020 <br />
                 Florida International University, Miami, FL
               </p>
-              <a href="#" role="button" className="pre-register-btn">
+              <a
+                href="https://shellhacks.typeform.com/to/zxFTkk"
+                role="button"
+                className="pre-register-btn"
+              >
                 Pre-Register Now!
               </a>
               <div className="button-container">
-                <a href="#">Sponsor</a>
-                <a href="#">2019 Site</a>
+                <a
+                  href="mailto:upe@fiu.edu?Subject=Shellhacks%202020%20sponsor%20interest%20form"
+                  target="_top"
+                >
+                  Sponsor
+                </a>
+                <a href="https://2019.shellhacks.net" rel="_blank">
+                  2019 Site
+                </a>
               </div>
               <div className="social-media-container">
-                <a href="#">
+                <a href="http://discord.gg/upefiu" rel="_blank">
                   <img src={discordLogo} alt="discord-logo" />
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/upefiu/" rel="_blank">
                   <img src={faceBookLogo} alt="facebook-logo" />
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/upefiu/" rel="_blank">
                   <img src={instagramLogo} alt="instagram-logo" />
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/upefiu" rel="_blank">
                   <img src={twitterLogo} alt="twitter-logo" />
                 </a>
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/company/28673457"
+                  rel="_blank"
+                >
                   <img src={linkedinLogo} alt="linkedin-logo" />
                 </a>
               </div>
