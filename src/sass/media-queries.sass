@@ -1,0 +1,43 @@
+// defined by min-width
+// @mixin extrawide
+//   @media screen and (min-width: 1920px)
+//     @content
+
+@mixin wide
+  @media screen and (min-width: 1440px)
+    @content
+
+@mixin medium
+  @media screen and (min-width: 1280px)
+    @content
+
+@mixin small
+  @media screen and (min-width: 1024px)
+    @content
+
+// defined by max-width
+@mixin laptop
+  @media screen and (max-width: 1280px)
+    @content
+
+@mixin tablet
+  @media screen and (max-width: 900px)
+    @content
+
+@mixin mobile
+  @media screen and (max-width: 500px)
+    @content
+
+@mixin small-down
+  @media screen and (max-width: 1024px)
+    @content
+
+
+// Customs
+@mixin max-width-query($value)
+  @media screen and (max-width: $value)
+    @content
+
+@mixin min-width-query($value)
+  @media screen and (min-width: $value)
+    @content

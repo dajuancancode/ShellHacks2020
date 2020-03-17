@@ -1,0 +1,120 @@
+@import './variables.sass'
+@import './media-queries.sass'
+
+@mixin container
+  max-width: 1360px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 50px
+  padding-right: 50px
+  @include mobile
+    padding-left: 30px
+    padding-right: 30px
+
+@mixin containerPadding
+  padding-top: 70px
+  padding-bottom: 70px
+  @include tablet
+    padding-top: 40px
+    padding-bottom: 40px
+
+@mixin h1
+  line-height: 64px
+  font-size: 58px
+  font-weight: 700
+  color: #1c1d1e
+  @include mobile
+    line-height: 44px
+    font-size: 40px
+
+@mixin h2
+  line-height: 48px
+  font-size: 44px
+  font-weight: 700
+  color: #1c1d1e
+  @include mobile
+    line-height: 40px
+    font-size: 36px
+
+@mixin h3
+  line-height: 42px
+  font-size: 28px
+  font-weight: 700
+  color: #1c1d1e
+  @include mobile
+    line-height: 34px
+    font-size: 24px
+
+@mixin h4
+  line-height: 34px
+  font-size: 24px
+  font-weight: 700
+  color: #1c1d1e
+
+@mixin h5
+  line-height: 16px
+  font-size: 13px
+  font-weight: 600
+  color: #a68af1
+  text-transform: uppercase
+
+@mixin p
+  line-height: 30px
+  font-size: 18px
+  font-weight: 300
+  color: #6e6d76
+  a
+    font-weight: 600
+    color: $altBlue
+  strong
+    font-weight: 600
+    color: #6e6d76 
+
+@mixin button
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  outline: none
+  height: 50px
+  border: 1px solid transparent
+  border-radius: 25px
+  padding: 0px 40px
+  background: unset
+  font-size: 16px
+  font-weight: 700
+  white-space: nowrap
+  cursor: pointer
+  transition: all 0.25s
+  text-decoration: none
+  &.primary
+    border-color: #2183f9
+    color: #ffffff
+    background-color: #2183f9
+    box-shadow: 0px 10px 40px rgba(#2183f9, 0.32)
+  &.secondary
+    border-color: #d7dde4
+    color: #575e71
+  &:hover
+    top: -1px
+  &:first-child
+    margin-right: 10px
+  &:last-child
+    margin-left: 10px
+  &:first-child:last-child
+    margin-left: 0px
+    
+  @include mobile
+    &.primary
+      margin-bottom: 10px
+    &:first-child
+      margin-right: 0px
+    &:last-child
+      margin-left: 0px
+
+@mixin icon
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 24px
+  height: 24px
