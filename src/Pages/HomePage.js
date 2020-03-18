@@ -38,7 +38,7 @@ const HomePage = props => {
                 </a>
                 <a
                   className="old-site-btn"
-                  href="https://2019.shellhacks.net"
+                  href="https://shellhacks2019.netlify.com/"
                   rel="_blank"
                 >
                   2019 Site
