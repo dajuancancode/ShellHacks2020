@@ -4,7 +4,7 @@
   &__header
     padding: 20px
     background: $purple-gradient
-    height: 100vh
+    min-height: 100vh
     width: 100%
     overflow: hidden
     display: flex
@@ -77,18 +77,12 @@
           a
             background: none
             border-radius: 20px
+            border: 2px solid $blue
             width: 45%
-            border-radius: 20px
             padding: 7px 10px
             font-weight: 800
             color: #fff
             position: relative
-            border: 4px solid transparent
-            border-radius: 16px
-            border-width: 2px
-            border-style: solid
-            // border-image: url('../assets/branding/pink-blue-button-background.png') 1 1 1 1//linear-gradient( 140deg,  $pink, $blue) 1 1 1 1
-            border-color: $blue
             @media(min-width: $tablet-width)
               width: 45%
               margin-bottom: 20px

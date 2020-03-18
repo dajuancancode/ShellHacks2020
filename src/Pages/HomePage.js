@@ -1,12 +1,12 @@
 import React from "react";
 import "./HomePage.sass";
-import discordLogo from "../assets/social-media/discord.png";
-import faceBookLogo from "../assets/social-media/facebook.png";
-import instagramLogo from "../assets/social-media/instagram.png";
-import twitterLogo from "../assets/social-media/twitter.png";
-import linkedinLogo from "../assets/social-media/linkedin.png";
-import ShellHacksLogo from "../assets/branding/ShellHacks-title.png";
-import futuristicBuilding from "../assets/branding/futuristic-city.png";
+import discordLogo from "../assets/social-media/discord.svg";
+import faceBookLogo from "../assets/social-media/facebook.svg";
+import instagramLogo from "../assets/social-media/instagram.svg";
+import twitterLogo from "../assets/social-media/twitter.svg";
+import linkedinLogo from "../assets/social-media/linkedin.svg";
+import ShellHacksLogo from "../assets/branding/ShellHacks-title.svg";
+import futuristicBuilding from "../assets/branding/smart-city.svg";
 
 const HomePage = props => {
   return (
@@ -30,12 +30,17 @@ const HomePage = props => {
               </a>
               <div className="button-container">
                 <a
+                  className="sponsor-btn"
                   href="mailto:upe@fiu.edu?Subject=Shellhacks%202020%20sponsor%20interest%20form"
                   target="_top"
                 >
                   Sponsor
                 </a>
-                <a href="https://2019.shellhacks.net" rel="_blank">
+                <a
+                  className="old-site-btn"
+                  href="https://2019.shellhacks.net"
+                  rel="_blank"
+                >
                   2019 Site
                 </a>
               </div>
