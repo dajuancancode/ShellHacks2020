@@ -31,7 +31,7 @@ const HomePage = props => {
               <div className="button-container">
                 <a
                   className="sponsor-btn"
-                  href="mailto:upe@fiu.edu?Subject=Shellhacks%202020%20sponsor%20interest%20form"
+                  href="mailto:upe@fiu.edu?Subject=Shellhacks%202020%20sponsor%20inquiry"
                   target="_top"
                 >
                   Sponsor
