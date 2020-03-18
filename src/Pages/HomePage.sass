@@ -9,13 +9,14 @@
 .HomePage
   text-align: center
   &__header
-    // padding: 20px
     background: $purple-gradient
     min-height: 100vh
     width: 100%
     overflow: hidden
     display: flex
     justify-content: center
+    @media(max-width: 1120px)
+      padding: 20px
     .header-inner
       height: 100vh
       width: 100%
