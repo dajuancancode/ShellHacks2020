@@ -36,3 +36,13 @@ a
     text-decoration: none
     border-bottom: none
     color: inherit
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
