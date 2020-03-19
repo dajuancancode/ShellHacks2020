@@ -21,12 +21,15 @@
       height: 100vh
       width: 100%
       max-width: 1440px
-      overflow: hidden
       display: flex
+      @media(max-width: $tablet-width)
+        flex-direction: column
       @media(min-width: $tablet-width)
         justify-content: space-between
       .header-content
         margin: auto
+        @media(max-width: $tablet-width)
+          margin: 30px auto
         @media(min-width: $tablet-width)
           width: 45%
         .title
@@ -106,17 +109,17 @@
             @media(min-width: $tablet-width)
               height: 30px
     .city
-      display: none
       width: 70%
       margin: auto
+      padding-bottom: 50px
       @media(min-width: 1120px)
         width: 50%
       img
-        height: 420px
         animation: float 2s alternate infinite
         animation-timing-function: ease-in-out
       @media(min-width: $tablet-width)
         display: block
+        height: 420px
       @media(min-width: 1120px)
         img
           height: 510px
