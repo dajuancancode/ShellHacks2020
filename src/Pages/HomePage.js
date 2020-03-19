@@ -21,6 +21,9 @@ const HomePage = props => {
                 September 11 - 13th, 2020 <br />
                 Florida International University, Miami, FL
               </p>
+              <div className="city mobile">
+                <img src={futuristicBuilding} alt="futuristic-building" />
+              </div>
               <a
                 href="https://shellhacks.typeform.com/to/zxFTkk"
                 role="button"
