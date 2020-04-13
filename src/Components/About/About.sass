@@ -3,13 +3,13 @@
 .AboutSection
   display: flex;
   justify-content: space-evenly;
-  min-height: 100vh;
   width: 100%;
+  min-height: 90vh;
   &__content
-    width: 60%;
+    width: 45%;
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-self: flex-start;
 
     .title
       font-size: 50px;
@@ -22,27 +22,35 @@
       
 
     .information
-      padding: 0 20px;
       font-size: 25px;
-      line-height: 1.5;
       font-family: $bodyText;
+      color: #fff;
 
     &__details
       .detail_list
-        .learn::before
-          content: '📝';
-          margin-left: -20px;
-          margin-right: 10px;
-        .relax::before
-          content: '🖼️'
-          margin-left: -20px;
-          margin-right: 10px;
-        .treat::before
-          content: '🍹';
-          margin-left: -20px;
-          margin-right: 10px;
+        display: inline-block;
+        margin: 10px auto 0;
+        padding: 0!important;
         .detail
           font-family: $bodyText;
           list-style: none;
           margin-bottom: 10px;
           font-size: 25px;
+          text-align: justify;
+          text-justify: auto;
+          display: flex;
+          align-items: center;
+          color: #fff;
+
+          p
+            display: inline;
+            margin: 0;
+
+          .detailIcon
+            margin-right: 10px;
+            img 
+              height: 32px;
+              width: 32px;
+        .treat
+          margin-bottom: 0;
+          

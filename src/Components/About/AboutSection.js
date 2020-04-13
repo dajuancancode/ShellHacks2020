@@ -1,6 +1,10 @@
 import React from 'react'
 import "./About.sass"
 import placeholder from './placeholder.png'
+import relaxEmoji from '../../assets/emojis/1f5bc.svg'
+import learnEmoji from '../../assets/emojis/1f4dd.svg'
+import treatEmoji from '../../assets/emojis/1f379.svg'
+
 
 const AboutSection = props => {
   return (
@@ -16,13 +20,13 @@ const AboutSection = props => {
         <div className="AboutSection__content__details">
           <ul className="detail_list">
             <li className="detail learn">
-              <strong>Learn</strong> from 20+ workshops covering topics such as cybersecurity, hardware, game development and more!
+              <i className="detailIcon"><img className="learnIconImg" src={learnEmoji} alt="Learn"/></i><p><strong>Learn</strong> from 20+ workshops covering topics such as cybersecurity, hardware, game development and more!</p>
             </li>
             <li className="detail relax">
-              <strong>Relax</strong> and sit back with other participants as you join us in one of our various activities.
+              <i className="detailIcon"><img className="learnIconImg" src={relaxEmoji} alt="Learn"/></i><p><strong>Relax</strong> and sit back with other participants as you join us in one of our various activities.</p>
             </li>
             <li className="detail treat">
-              <strong>Treat</strong> yourself to some of our "Miami" cuisine and more
+              <i className="detailIcon"><img className="learnIconImg" src={treatEmoji} alt="Learn"/></i><p><strong>Treat</strong> yourself to some of our "Miami" cuisine and more</p>
             </li>
           </ul>
         </div>
