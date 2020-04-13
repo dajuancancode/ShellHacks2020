@@ -1,0 +1,48 @@
+@import '../../sass/import'
+
+.AboutSection
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  width: 100%;
+  &__content
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    .title
+      font-size: 50px;
+      background: $blue-pink-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      align-self: center;
+      font-family: $headerText;
+      
+
+    .information
+      padding: 0 20px;
+      font-size: 25px;
+      line-height: 1.5;
+      font-family: $bodyText;
+
+    &__details
+      .detail_list
+        .learn::before
+          content: '📝';
+          margin-left: -20px;
+          margin-right: 10px;
+        .relax::before
+          content: '🖼️'
+          margin-left: -20px;
+          margin-right: 10px;
+        .treat::before
+          content: '🍹';
+          margin-left: -20px;
+          margin-right: 10px;
+        .detail
+          font-family: $bodyText;
+          list-style: none;
+          margin-bottom: 10px;
+          font-size: 25px;
