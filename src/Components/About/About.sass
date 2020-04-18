@@ -13,10 +13,12 @@
     align-items: center;
     height: 90vh;
   &__imgContainer
-    width: 45%
+    width: 90%
     display: flex
     justify-content: center
     padding-top: 20px;
+    @media(min-width: $tablet-width)
+      width: 45%
   &__img
     height: 240px
     @media(min-width: 767px )
@@ -31,7 +33,7 @@
     display: flex
     flex-direction: column
     align-items: center
-    height: 510px
+    width: 90%
     @media(min-width: $tablet-width)
       width: 45%
   &__title
