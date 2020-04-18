@@ -8,13 +8,17 @@
   margin-top: 50px
   width: 90%;
   margin: 0 auto;
+  @media(min-width: $tablet-width)
+      margin-top: 50px
+  @media(min-width: $max-desktopWidth)
+      margin-top: 70px
   &__title
     @include font-canada-type-gibson($size: 32px, $weight: 900, $style: italic)
     display: inline-block
     background: $blue-pink-gradient
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    @media(min-width: 1120px)
+    @media(min-width: $max-desktopWidth)
       font-size: 45px
   &__container
     display: flex
