@@ -10,7 +10,7 @@ const TrackSection = props => {
     <div className="TrackSection">
       <h2 className="TrackSection__title">What's there?</h2>
       <div className="TrackSection__container">
-      {tracks.map(track => 
+      {tracks && tracks.map(track => 
           <Track 
           key={track.toString()}
           title="Front-End Development" 
