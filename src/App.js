@@ -1,6 +1,6 @@
 import React from 'react';
-// import './App.css';
 import HomePage from './Pages/HomePage'
+
 import AboutSection from './Components/About/AboutSection'
 import TrackSection from './Components/TrackSection/TrackSection'
 import "./App.sass"
