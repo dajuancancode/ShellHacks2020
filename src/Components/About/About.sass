@@ -1,27 +1,25 @@
-@import '../../sass/import'
+@import '../../sass/main.sass'
 
 .AboutSection
   display: flex
   flex-direction: column-reverse
   justify-content: space-evenly
   align-items: center
-  @media(min-width: 767px)
+  min-height: 100vh
+  @media(min-width: $tablet-width)
     flex-direction: row
-    height: 70vh;
-    align-items: flex-start;
-  @media(min-width: 1120px)
-    align-items: center;
-    height: 90vh;
   &__imgContainer
-    width: 45%
+    width: 90%
     display: flex
     justify-content: center
-    padding-top: 20px;
+    padding-top: 10px;
+    @media(min-width: $tablet-width )
+      width: 45%
   &__img
     height: 240px
-    @media(min-width: 767px )
+    @media(min-width: $tablet-width )
       height: 420px
-    @media(min-width: 1120px )
+    @media(min-width: $max-desktopWidth )
       height: 610px
       
     animation: float 2s alternate infinite
@@ -31,27 +29,26 @@
     display: flex
     flex-direction: column
     align-items: center
-    height: 510px
     @media(min-width: $tablet-width)
       width: 45%
   &__title
-    @include font-canada-type-gibson($size: 32px, $weight: 900, $style: italic)
+    @include font-canada-type-gibson($size: 3.2rem, $weight: 900, $style: italic)
     display: inline-block
     background: $blue-pink-gradient
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
     margin: 0
-    @media(min-width: 1120px)
-      font-size: 45px
+    @media(min-width: $max-desktopWidth)
+      font-size: 4.5rem
   &__info
     margin: 25px auto 0
     width: 95%
     padding: 10px
-    @include font-canada-type-gibson($size: 16px, $weight: 200, $color: #fff, $lh: 1.3, $style: normal);
+    @include font-canada-type-gibson($size: 1.6rem, $weight: 200, $color: #fff, $lh: 1.3, $style: normal);
     @media(min-width: $tablet-width)
-      font-size: 20px
-    @media(min-width: 1120px)
-      font-size: 25px
+      font-size: 2.0rem
+    @media(min-width: $max-desktopWidth)
+      font-size: 2.5rem
 
   &__details
     width: 100%
@@ -69,11 +66,11 @@
     padding: 0
     margin: 0
     align-self: flex-start
-    @include font-canada-type-gibson($size: 16px, $weight: 200, $color: #fff, $lh: 1.3, $style: normal)
-    @media(mmin-width: 767px)
-      font-size: 20px
-    @media(min-width: 1120px)
-      font-size: 25px
+    @include font-canada-type-gibson($size: 1.6rem, $weight: 200, $color: #fff, $lh: 1.3, $style: normal)
+    @media(mmin-width: $tablet-width)
+      font-size: 2.0rem
+    @media(min-width: $max-desktopWidth)
+      font-size: 2.5rem
   &__detailInfo span
     font-weight: 900
   &__icon
@@ -81,8 +78,4 @@
     margin-top: 5px
   &__iconImg
     height: 20px
-    width: 20px
-  
-      
-      
-          
+    width: 20px     

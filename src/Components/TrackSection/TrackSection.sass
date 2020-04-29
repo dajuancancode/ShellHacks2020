@@ -1,0 +1,25 @@
+@import '../../sass/main.sass'
+
+.TrackSection
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+  align-items: center
+  margin-top: 50px
+  @media(min-width: $tablet-width)
+      margin-top: 50px
+  @media(min-width: $max-desktopWidth)
+      margin-top: 70px
+  &__title
+    @include font-canada-type-gibson($size: 3.2rem, $weight: 900, $style: italic)
+    display: inline-block
+    background: $blue-pink-gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin-bottom: 15px;
+    @media(min-width: $max-desktopWidth)
+      font-size: 4.5rem;
+  &__container
+    display: flex
+    flex-flow: row wrap
+      
