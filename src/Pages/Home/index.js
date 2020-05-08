@@ -6,11 +6,11 @@ import './styles.sass'
 
 const HomePage = () => {
   return (
-   <>
+   <div className="HomePage">
     <HomePageHero />
     <About />
     <TrackSection/>
-   </>
+   </div>
   );
 };
 
