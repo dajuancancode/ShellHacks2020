@@ -1,5 +1,5 @@
 import React from 'react'
-import "./About.sass"
+import "./styles.sass"
 import About from '../../assets/branding/About.svg'
 import relaxEmoji from '../../assets/emojis/1f5bc.svg'
 import learnEmoji from '../../assets/emojis/1f4dd.svg'

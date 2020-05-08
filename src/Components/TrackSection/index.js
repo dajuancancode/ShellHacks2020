@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './TrackSection.sass'
+import './styles.sass'
 
-import Track from '../Track/Track'
+import Track from '../Track'
 
 const TrackSection = props => {
   const tracks = [1,2,3,4,5,6]

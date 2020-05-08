@@ -1,7 +1,6 @@
 import React from 'react'
-
 import "../../sass/main.sass"
-import "./Track.sass"
+import "./styles.sass"
 
 import TrackImage from "../../assets/branding/Track_Image.svg"
 
