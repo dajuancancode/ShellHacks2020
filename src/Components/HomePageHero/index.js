@@ -25,11 +25,11 @@ const HomePageHero = () => {
                 <img src={futuristicBuilding} alt="futuristic-building" />
               </div>
               <a
-                href="https://shellhacks.typeform.com/to/zxFTkk"
+                href="/signUp"
                 role="button"
                 className="pre-register-btn"
               >
-                Pre-Register Now!
+                Register Now!
               </a>
               <div className="button-container">
                 <a
