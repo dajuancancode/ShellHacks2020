@@ -1,9 +1,11 @@
 import React from 'react'
+import {object,reach} from 'yup'
 import {validEmail,validString,validPassword} from '../Util/validation'
 import Form from '../Common/Form'
+import './styles.sass'
 
 
-const SignUpForm = ()=>{
+const SignUpForm = (props)=>{
   const inputs = [
     {
       name: 'email',
@@ -42,38 +44,41 @@ const SignUpForm = ()=>{
     }
   ]
 
-  const validateHelper = async (value,validator)=>{
-    return await validator.validate(value).catch((err)=> err.errors[0])
-  }
+  inputs.forEach((input)=>{
+    input.className = "SignUpForm__input"
+  })
+
 
   const validate = (values)=>{
     const errors = {}
     if(values.password !== values.confirmPassword){
       errors.confirmPassword = "passwords must match"
     }
+    return errors
   }
 
+
+  const schema = object().shape({
+    email: validEmail(),
+    firstName: validString(),
+    lastName: validString(),
+    password: validPassword(),
+    // confirmPassword: validPassword()
+  })
+
+  const validateHelper = async (value,path)=>
+    reach(schema,path).validate(value)
+    .then(()=>null)
+    .catch((err)=> {
+     return err.errors[0]
+     })
+
+
   const fieldValidation = {
-    email: async (email)=>{
-      let error = await validateHelper(email,validEmail)
-      return error
-    },
-    firstName: async (firstName)=>{
-      let error = await validateHelper(firstName,validString)
-      return error
-    },
-    lastName: async (lastName)=>{
-      let error = await validateHelper(lastName,validString)
-      return error
-    },
-    password: async (password)=>{
-      let error = await validateHelper(password,validPassword)
-      return error
-    },
-    confirmPassword: async (password)=>{
-      let error = await validateHelper(password,validPassword)
-      return error
-    },
+    email: async (email)=> await validateHelper(email,'email'),
+    firstName: async (firstName)=> await validateHelper(firstName,'firstName'),
+    lastName: async (lastName)=> await validateHelper(lastName,'lastName'),
+    password: async (password)=> await validateHelper(password,'password'),
   }
 
   const initialValues = {
@@ -85,13 +90,27 @@ const SignUpForm = ()=>{
   }
 
   const onSubmit = (values)=>{
-
+    alert('submitting')
   }
+
+  const returnBtn= ()=>(
+    <button onClick={props.handleReturn} className="SignUpForm__return-btn">
+      Return
+    </button>
+  )
 
   return (
     <Form 
       initialValues={initialValues}
       validate={validate}
+      onSubmit={onSubmit}
+      inputs={inputs}
+      buttonText={"Submit"}
+      className="SignUpForm"
+      fieldValidation={fieldValidation}
+      Component={returnBtn}
     />
   )
 }
+
+export default SignUpForm

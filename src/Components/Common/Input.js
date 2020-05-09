@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field} from 'formik'
-import cx from 'classNames'
+import cx from 'classnames'
 
 const Input = (props)=>{
   switch(props.type){
@@ -15,22 +15,27 @@ const TextInput = ({name,value,label,placeholder,className,type,id,onChange,vali
     [className]: className
   })
  return (
-  <div className={TextInputClasses}>
+  <div 
+  className={TextInputClasses}>
     {label && <label htmlFor={name} >{label}</label>}
-    <Field 
+    <Field
+    autoComplete="on"
     type={type}
     name={name} 
     id={id} 
     value={value}  
-    placeholder={placeholder | ''}
-    InputProps={{
-      onChange:{onChange}
-    }}
+    placeholder={placeholder}
+    // InputProps={{
+    //   onChange:{onChange}
+    // }}
     {...(validate ? {validate} : {})}
     />
   </div>
  )
 }
+
+
+export default Input
 
 //{name,value,label,placeholder,className,type}
 //dropdown
