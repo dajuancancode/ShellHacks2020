@@ -10,7 +10,7 @@ const AboutSection = props => {
   return (
     <div className="AboutSection">
       <div className="AboutSection__imgContainer">
-        <img class="AboutSection__img" src={About} alt ="About SVG"/>
+        <img className="AboutSection__img" src={About} alt ="About SVG"/>
       </div>
       <div className="AboutSection__content">
         <h2 className="AboutSection__title">What's the Scoop?</h2>
