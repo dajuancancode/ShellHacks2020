@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from "./FAQ.sass"
+import "./FAQ.sass"
 
 const FAQ = ({name, body}) => {
 
@@ -10,7 +10,7 @@ const FAQ = ({name, body}) => {
 
   return (
     <div className="FAQ" onClick={handleClick}>
-      <h1 className={[styles.FAQ__title, (visibility ? "FAQ__title--colorBackground" : "FAQ__title--transBackground")].join(" ")}>
+      <h1 className={["FAQ__title", (visibility ? "FAQ__title--colorBackground" : "FAQ__title--transBackground")].join(" ")}>
         {name}
       </h1>
       <div className={["FAQ__body", (visibility ? "FAQ__body--visible" : "FAQ__body--hidden")].join(" ")}>

@@ -2,7 +2,7 @@ import React from "react";
 import HomePageHero from "../../Components/HomePageHero";
 import About from '../../Components/About'
 import TrackSection from '../../Components/TrackSection'
-import FAQ from '../../Components/FAQSection'
+import FAQSection from "../../Components/FAQSection/FAQSection"
 import './styles.sass'
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
     <HomePageHero />
     <About />
     <TrackSection/>
-    <FAQ />
+    <FAQSection />
    </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react"
 
 import FAQ from "../FAQ/FAQ"
-import styles from "./FAQSection.sass"
+import "./FAQSection.sass"
 
 const FAQSection = props => {
   
