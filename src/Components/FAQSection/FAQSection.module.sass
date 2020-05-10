@@ -1,0 +1,17 @@
+@import "../../sass/main"
+
+
+.FAQSection
+  margin-top: 30px
+  display: flex
+  flex-direction: column
+  &__title
+    @include font-canada-type-gibson($size: 3.2rem, $weight: 900, $style: italic)
+    display: inline-block
+    background: $blue-pink-gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin-bottom: 20px
+    text-align: center
+    @media(min-width: $max-desktopWidth)
+      font-size: 4.5rem
