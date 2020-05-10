@@ -1,17 +1,17 @@
 import React from "react";
-import "./HomePage.sass";
-import discordLogo from "../assets/social-media/discord.svg";
-import faceBookLogo from "../assets/social-media/facebook.svg";
-import instagramLogo from "../assets/social-media/instagram.svg";
-import twitterLogo from "../assets/social-media/twitter.svg";
-import linkedinLogo from "../assets/social-media/linkedin.svg";
-import ShellHacksLogo from "../assets/branding/ShellHacks-title.svg";
-import futuristicBuilding from "../assets/branding/smart-city.svg";
+import "./styles.sass";
+import discordLogo from "../../assets/social-media/discord.svg";
+import faceBookLogo from "../../assets/social-media/facebook.svg";
+import instagramLogo from "../../assets/social-media/instagram.svg";
+import twitterLogo from "../../assets/social-media/twitter.svg";
+import linkedinLogo from "../../assets/social-media/linkedin.svg";
+import ShellHacksLogo from "../../assets/branding/ShellHacks-title.svg";
+import futuristicBuilding from "../../assets/branding/smart-city.svg";
 
-const HomePage = props => {
+const HomePageHero = () => {
   return (
-    <div className="HomePage">
-      <div className="HomePage__header">
+    <div className="HomePageHero">
+      <div className="HomePageHero__header">
         <div className="header-inner">
           <div className="header-content">
             <img className="title" src={ShellHacksLogo} alt="shellhacks" />
@@ -25,11 +25,11 @@ const HomePage = props => {
                 <img src={futuristicBuilding} alt="futuristic-building" />
               </div>
               <a
-                href="https://shellhacks.typeform.com/to/zxFTkk"
+                href="/signUp"
                 role="button"
                 className="pre-register-btn"
               >
-                Pre-Register Now!
+                Register Now!
               </a>
               <div className="button-container">
                 <a
@@ -78,4 +78,4 @@ const HomePage = props => {
   );
 };
 
-export default HomePage;
+export default HomePageHero;

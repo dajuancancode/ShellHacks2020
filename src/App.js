@@ -1,20 +1,20 @@
 import React from 'react';
-import HomePage from './Pages/HomePage'
+import {Router, Route, Switch} from 'react-router-dom';
+import history from './history'
+import HomePage from './Pages/Home'
+import DashBoard from './Pages/Dashboard';
+import SignUpPage from './Pages/SignUpPage';
 
-import AboutSection from './Components/About/AboutSection'
-import TrackSection from './Components/TrackSection/TrackSection'
-import FAQSection from './Components/FAQSection/FAQSection'
-
-import "./App.sass"
 
 function App() {
   return (
-      <div className="background">
-        <HomePage />
-        <AboutSection />
-        <TrackSection />
-        <FAQSection />
-      </div>
+    <Router history={history}>
+      <Switch>
+        <Route  path="/" exact component={HomePage} />
+        <Route path="/dashboard" exact component={DashBoard} />
+        <Route path="/signUp" exact component={SignUpPage} />
+      </Switch>
+    </Router>
   );
 }
 
