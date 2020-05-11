@@ -6,15 +6,15 @@ export const client = axios.create({
 
 const IAMAPI = {
   signUp: (user) =>{
-    return client.post('/users/createAccount', user)
+    return client.post('/users', user)
   },
-  login: (email,password) =>{
-    return client.post('/users/login',{email,password}).then(({data})=>{
+  login: (payload) =>{
+    return client.post('/users/login', payload).then(({data})=>{
       return data;
     })
   },
   getUser: ()=>{
-    return client.get('/users/').then(({data})=>{
+    return client.get('/users/',{headers: {authorization: localStorage.getItem('ShellHacks-Auth')}}).then(({data})=>{
       return data;
     })
   },

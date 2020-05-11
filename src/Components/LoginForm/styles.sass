@@ -1,9 +1,9 @@
 @import '../../sass/main.sass'
 
-.SignUpForm
+.LoginForm
   padding: 10px
   width: 100%
-  color:red
+  color: red
   &__input input
     background: transparent
     border: none
@@ -26,20 +26,25 @@
   &__btn-container
     padding-top: 10px
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
   &__btn-container button
     cursor: pointer
-    width: 45%
     border-radius: 25px
     padding: 15px 20px
-    color: #fff;
+    color: #fff
     font-weight: 700
     font-size: 20px
-    letter-spacing: 1.2px;
+    letter-spacing: 1.2px
   &__submit-btn
+    width: 100%
     border: none
     background: linear-gradient(80deg,#0ad2df,#f605fe)
-  &__return-btn
+  &__footer
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding-top: 20px
+  &__create-account-btn
     background: none
     border: 2px solid $blue
   &__status
@@ -48,5 +53,3 @@
     color: red
   &__status .LoaderBalls
     margin: auto
-  
-  

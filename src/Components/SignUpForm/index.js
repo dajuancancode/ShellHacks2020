@@ -89,10 +89,10 @@ const SignUpForm = (props)=>{
     confirmPassword: ''
   }
 
-  const onSubmit = (values)=>{
-    alert('submitting')
+  const onSubmit = ({confirmPassword,...values})=>{
+    props.handleSubmit(values)
   }
-
+  
   const returnBtn= ()=>(
     <button onClick={props.handleReturn} className="SignUpForm__return-btn">
       Return
@@ -109,6 +109,7 @@ const SignUpForm = (props)=>{
       className="SignUpForm"
       fieldValidation={fieldValidation}
       Component={returnBtn}
+      store={props}
     />
   )
 }
