@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getAuthToken } from '../utils'
 
 export const client = axios.create({
   baseURL: process.env.REACT_APP_IAM_BASE_ROUTE,
@@ -14,7 +15,7 @@ const IAMAPI = {
     })
   },
   getUser: ()=>{
-    return client.get('/users/',{headers: {authorization: localStorage.getItem('ShellHacks-Auth')}}).then(({data})=>{
+    return client.get('/users/',{headers: {authorization: getAuthToken()}}).then(({data})=>{
       return data;
     })
   },

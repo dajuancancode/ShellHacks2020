@@ -93,10 +93,13 @@ const SignUpForm = (props)=>{
     props.handleSubmit(values)
   }
   
-  const returnBtn= ()=>(
+  const Footer = () => (
+    <>
     <button onClick={props.handleReturn} className="SignUpForm__return-btn">
-      Return
+        Return
     </button>
+        <a className="SignUpForm__login-btn" href="/login">Already have an account? click here to sign in</a>
+    </>
   )
 
   return (
@@ -108,7 +111,7 @@ const SignUpForm = (props)=>{
       buttonText={"Submit"}
       className="SignUpForm"
       fieldValidation={fieldValidation}
-      Component={returnBtn}
+      Component={Footer}
       store={props}
     />
   )

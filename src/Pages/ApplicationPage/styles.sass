@@ -1,0 +1,30 @@
+@import '../../sass/main.sass'
+
+.ApplicationPage
+  background: $purple-gradient
+  min-height: 100vh
+  height: 100%
+  display: flex
+  padding: 20px
+  &__form-container
+    width: 100%
+    max-width: 1440px
+    margin: auto
+    border-radius: 20px
+    padding: 50px 30px
+    padding-bottom: 80px
+  &__header
+    text-align: center
+  &__title
+    font-size: 30px
+    font-weight: 800
+    font-style: italic
+    letter-spacing: 1.3px
+    margin-bottom: 15px
+    @media(min-width: 752px)
+      font-size: 35px
+  &__sub-title
+    margin-bottom: 10px
+  .SignUpForm
+    @media(min-width: 752px)
+      width: 55%
