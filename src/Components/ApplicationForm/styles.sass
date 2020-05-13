@@ -1,10 +1,17 @@
 @import '../../sass/main.sass'
 
-.SignUpForm
+.ApplicationForm
   padding: 10px
   width: 100%
-  color: red
-  &__input input
+  &__section-title
+    font-weight: 600
+    font-size: 20px
+    margin-bottom: 25px
+  &__input label,&__dropdown label, &__searchable-dropdown label, &__file label
+    font-weight: 400
+    margin-bottom: 6px
+    display: block
+  &__input input, &__dropdown select, &__searchable-dropdown
     background: transparent
     border: none
     width: 100%
@@ -16,6 +23,9 @@
     padding: 10px
   &__input input::placeholder
     color: $grey
+    margin-top: 0px
+  &__file
+    margin-bottom: 23px
   &__error
     font-size: 10px
     margin-top: -18px
@@ -27,7 +37,6 @@
     padding-top: 10px
     display: flex
     justify-content: space-between
-    flex-wrap: wrap
   &__btn-container button
     cursor: pointer
     width: 45%
@@ -43,11 +52,6 @@
   &__return-btn
     background: none
     border: 2px solid $blue
-  &__login-btn
-    width: 100%
-    text-align: center
-    padding-top: 15px
-    color: $blue !important
   &__status
     margin-top: 35px
     text-align: center

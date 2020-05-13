@@ -29,7 +29,7 @@ const SignUpPage = ({store})=>{
         handleSubmit,
         loading: store.loading,
         error: store.error
-      }}/>
+        }} />
       </div>
       <div className="SignUpPage__footer">
       </div>

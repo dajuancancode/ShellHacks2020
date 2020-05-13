@@ -1,0 +1,182 @@
+[
+  {
+    "label": "Accounting",
+    "value": "Accounting"
+  },
+  {
+    "label": "Aerospace Engineering",
+    "value": "Aerospace Engineering"
+  },
+  {
+    "label": "Applied Physics",
+    "value": "Applied Physics"
+  },
+  {
+    "label": "Architecture",
+    "value": "Architecture"
+  },
+  {
+    "label": "Astronomy or Astrophysics",
+    "value": "Astronomy or Astrophysics"
+  },
+  {
+    "label": "Biochemistry",
+    "value": "Biochemistry"
+  },
+  {
+    "label": "Biology",
+    "value": "Biology"
+  },
+  {
+    "label": "Biomedical Engineering",
+    "value": "Biomedical Engineering"
+  },
+  {
+    "label": "Business",
+    "value": "Business"
+  },
+  {
+    "label": "Chemical Engineering",
+    "value": "Chemical Engineering"
+  },
+  {
+    "label": "Chemistry",
+    "value": "Chemistry"
+  },
+  {
+    "label": "Civil Engineering",
+    "value": "Civil Engineering"
+  },
+  {
+    "label": "Computational Media",
+    "value": "Computational Media"
+  },
+  {
+    "label": "Computer Engineering",
+    "value": "Computer Engineering"
+  },
+  {
+    "label": "Computer Science",
+    "value": "Computer Science"
+  },
+  {
+    "label": "Discrete Mathematics",
+    "value": "Discrete Mathematics"
+  },
+  {
+    "label": "Drama or Theater",
+    "value": "Drama or Theater"
+  },
+  {
+    "label": "Earth and Atmospheric Sciences",
+    "value": "Earth and Atmospheric Sciences"
+  },
+  {
+    "label": "Economics",
+    "value": "Economics"
+  },
+  {
+    "label": "Electrical Engineering",
+    "value": "Electrical Engineering"
+  },
+  {
+    "label": "English or Literature, Media, and Communication",
+    "value": "English or Literature, Media, and Communication"
+  },
+  {
+    "label": "Environmental Engineering",
+    "value": "Environmental Engineering"
+  },
+  {
+    "label": "Film and Media Studies",
+    "value": "Film and Media Studies"
+  },
+  {
+    "label": "Finance",
+    "value": "Finance"
+  },
+  {
+    "label": "Global Studies and Languages",
+    "value": "Global Studies and Languages"
+  },
+  {
+    "label": "History",
+    "value": "History"
+  },
+  {
+    "label": "Humanities",
+    "value": "Humanities"
+  },
+  {
+    "label": "Industrial Design",
+    "value": "Industrial Design"
+  },
+  {
+    "label": "Information Technology",
+    "value": "Information Technology"
+  },
+  {
+    "label": "International Affairs or International Relations",
+    "value": "International Affairs or International Relations"
+  },
+  {
+    "label": "Linguistics",
+    "value": "Linguistics"
+  },
+  {
+    "label": "Materials Science and Engineering",
+    "value": "Materials Science and Engineering"
+  },
+  {
+    "label": "Mathematics",
+    "value": "Mathematics"
+  },
+  {
+    "label": "Mechanical Engineering",
+    "value": "Mechanical Engineering"
+  },
+  {
+    "label": "Music",
+    "value": "Music"
+  },
+  {
+    "label": "Music Technology",
+    "value": "Music Technology"
+  },
+  {
+    "label": "Neuroscience",
+    "value": "Neuroscience"
+  },
+  {
+    "label": "Nuclear and Radiological Engineering",
+    "value": "Nuclear and Radiological Engineering"
+  },
+  {
+    "label": "Other",
+    "value": "Other"
+  },
+  {
+    "label": "Philosophy",
+    "value": "Philosophy"
+  },
+  {
+    "label": "Physics",
+    "value": "Physics"
+  },
+  {
+    "label": "Political Science",
+    "value": "Political Science"
+  },
+  {
+    "label": "Psychology",
+    "value": "Psychology"
+  },
+  {
+    "label": "Public Policy",
+    "value": "Public Policy"
+  },
+  {
+    "label": "Web Development and UI/UX",
+    "value": "Web Development and UI/UX"
+  }
+]

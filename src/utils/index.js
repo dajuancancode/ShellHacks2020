@@ -1,0 +1,1 @@
+export const getAuthToken = () => localStorage.getItem(process.env.REACT_APP_AUTH_TOKEN)

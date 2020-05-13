@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import moment from 'moment'
 
 
 export const validEmail = (
@@ -25,4 +26,42 @@ export const validPassword = (
   ,"Password must have atleast one uppercase letter, lowercase letter, one number and one special character")
   .min(8,min)
   .max(20,max)
+}
+
+export const validPhoneNumber = (
+  message= "Phone number must be one of the following format XXX-XXX-XXXX"
+) => {
+  return yup.string().matches(/^[2-9]\d{2}-\d{3}-\d{4}$/,message)
+}
+
+
+const getValidDobRange = () => {
+  let eventDate = moment(new Date(2020, 9, 11), "YYYYMMDD");
+  const max = moment(eventDate)
+    .subtract(18, "years") // 18yrs from shellhacks
+    .format("YYYY-MM-DD");
+  console.log(max)
+  return max;
+};
+
+
+export const validDate = (
+  format = 'Date must be in the following format DD/MM/YYYY',
+  max = "Must be at least 18 years old",
+  required = "Date is required"
+) => {
+  return yup
+    .date()
+    .max(new Date(getValidDobRange()), max)
+    .required(required)
+}
+
+
+export const validPDF = () => {
+  const FILE_SIZE = 87756
+  const SUPPORTED_FORMATS = ["application/pdf"]
+  return yup
+    .mixed()
+    .test('fileSize', "File Size is too large", value => value.size <= FILE_SIZE)
+    .test('fileType', "Unsupported File Format", value => SUPPORTED_FORMATS.includes(value.type))
 }

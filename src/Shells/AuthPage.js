@@ -5,7 +5,7 @@ import {AuthStoreConsumer} from '../store/AuthStore/Context'
 import LoadingPage from '../Pages/Loading'
 
 
-const AuthPage = ({store,children})=>{
+const AuthPage = ({store,Component})=>{
   console.log(store)
   useEffect(()=>{
     if(!store.user){
@@ -15,12 +15,12 @@ const AuthPage = ({store,children})=>{
         }
       })
     }
-  },[])
+  },[store])
 
   if(store.loading){
     return <LoadingPage />
   }
-  return <>{children}</>
+  return <Component />
 }
 
 

@@ -29,9 +29,9 @@ const Form = ({initialValues,validate,onSubmit,inputs,buttonText,className="",fi
       <FormikForm>
         {inputs.map((input)=>(
           <>
-          <Input
+            <Input
           {...input} 
-          key={input.name} 
+          key={input.name}
           handleChange={formik.handleChange} 
           value={formik.values[input.name]}
           {...(fieldValidation[input.name] ? {validate: fieldValidation[input.name]} : {})}

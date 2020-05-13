@@ -5,6 +5,7 @@ import HomePage from './Pages/Home'
 import DashBoard from './Pages/Dashboard';
 import SignUpPage from './Pages/SignUpPage';
 import LoginPage from './Pages/LoginPage'
+import ApplicationPage from './Pages/ApplicationPage'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/dashboard" exact component={DashBoard} />
         <Route path="/signUp" exact component={SignUpPage} />
         <Route path="/login" exact component={LoginPage} />
+        <Route path="/application" exact component={ApplicationPage} />
       </Switch>
     </Router>
   );
