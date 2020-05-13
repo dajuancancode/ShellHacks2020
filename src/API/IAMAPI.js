@@ -15,7 +15,7 @@ const IAMAPI = {
     })
   },
   getUser: ()=>{
-    return client.get('/users/',{headers: {authorization: getAuthToken}}).then(({data})=>{
+    return client.get('/users/',{headers: {authorization: getAuthToken()}}).then(({data})=>{
       return data;
     })
   },

@@ -6,7 +6,6 @@ import LoadingPage from '../Pages/Loading'
 
 
 const AuthPage = ({store,Component})=>{
-  console.log(store)
   useEffect(()=>{
     if(!store.user){
       store.getUser().then((success)=>{

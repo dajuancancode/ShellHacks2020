@@ -40,7 +40,6 @@ const getValidDobRange = () => {
   const max = moment(eventDate)
     .subtract(18, "years") // 18yrs from shellhacks
     .format("YYYY-MM-DD");
-  console.log(max)
   return max;
 };
 
