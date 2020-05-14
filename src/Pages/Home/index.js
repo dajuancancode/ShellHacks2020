@@ -2,6 +2,7 @@ import React from "react";
 import HomePageHero from "../../Components/HomePageHero";
 import About from '../../Components/About'
 import TrackSection from '../../Components/TrackSection'
+import FAQSection from "../../Components/FAQSection/FAQSection"
 import './styles.sass'
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
     <HomePageHero />
     <About />
     <TrackSection/>
+    <FAQSection />
    </div>
   );
 };
