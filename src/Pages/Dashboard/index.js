@@ -1,13 +1,16 @@
 import React from 'react'
-import SignUpForm from '../../Components/SignUpForm'
+import AuthPage from '../../Shells/AuthPage'
+import './styles.sass'
 
 const DashBoard = ()=>{
-  return (<div style={{color:'#000'}}>
-    <SignUpForm />
+  return (<div className="DashboardPage">
+    hello
   </div>)
 }
 
 
 
 
-export default DashBoard
+export default ()=>(
+  <AuthPage Component={DashBoard}/>
+)
