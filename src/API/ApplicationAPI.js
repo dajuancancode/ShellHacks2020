@@ -7,8 +7,6 @@ const client = axios.create({
 
 const ApplicationAPI = {
   createApplication: async (form) => {
-    console.log(form);
-
     const application = new FormData();
 
     Object.keys(form).forEach((key) => {
