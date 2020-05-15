@@ -3,7 +3,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "react/prop-types": ["disable"]
+    "react/prop-types": 0
   },
   "parser": "babel-eslint",
   "env": {

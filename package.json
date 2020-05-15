@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|sass|css|md)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|css|md)\""
   },
   "browserslist": {
     "production": [
