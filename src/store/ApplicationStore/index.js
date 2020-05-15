@@ -1,50 +1,53 @@
-import React, { useState } from "react";
-import { ApplicationStoreProvider } from "./Context";
-import ApplicationAPI from "../../API/ApplicationAPI";
+import React, { useState } from 'react'
+import { ApplicationStoreProvider } from './Context'
+import ApplicationAPI from '../../API/ApplicationAPI'
 
-const createState = (stateHook) => {
-  return (initialValue) => {
-    const [value, set] = stateHook(initialValue);
-    return { value, set };
-  };
-};
+/**
+ * Creates a new state hook
+ * Note: unless we're abatracting something here we should just use `useState`... there are no benefit of having the extra wrapper function.
+ *
+ * @param {*} stateHook
+ * @returns - state hook {value, setter}
+ */
+const useCreateState = (initialValue) => {
+  const [value, set] = useState(initialValue)
+  return { value, set } // This is unconventional, hooks should always return an array... should migrate later.
+}
 
-export default ({ children }) => {
-  const stateHook = createState(useState);
+export default function ApplicationProvider({ children }) {
+  const application = useCreateState(null)
+  const loading = useCreateState(false)
+  const error = useCreateState('')
 
-  const user = stateHook(null);
-  const loading = stateHook(false);
-  const error = stateHook("");
-
+  /**
+   * Creates a new user application
+   *
+   * @param {Object} payload
+   * @returns boolean
+   */
   const create = (payload) => {
-    loading.set(true);
-    error.set("");
+    loading.set(true)
+    error.set('')
 
     return ApplicationAPI.createApplication(payload)
       .then(() => {
-        loading.set(false);
-        return true;
+        loading.set(false)
+        return true
       })
       .catch((err) => {
-        loading.set(false);
+        loading.set(false)
         error.set(
-          err.response
-            ? err.response.data.message
-            : "There was an error, please try again later"
-        );
-      });
-  };
+          err.response ? err.response.data.message : 'There was an error, please try again later'
+        )
+      })
+  }
 
   const store = {
-    user: user.value,
+    application: application.value,
     loading: loading.value,
     error: error.value,
     create,
-  };
+  }
 
-  return (
-    <ApplicationStoreProvider value={store}>
-      {children}
-    </ApplicationStoreProvider>
-  );
-};
+  return <ApplicationStoreProvider value={store}>{children}</ApplicationStoreProvider>
+}
