@@ -119,7 +119,6 @@ const SearchableDropDown = (props) =>(
 
 
 const FileInput = ({field,form,...props}) => {
-  console.log('field stuff',props)
   const TextInputClasses = cx("FileInput", {
     [props.className]: props.className
   })
@@ -142,6 +141,5 @@ const FileInput = ({field,form,...props}) => {
 }
 
 const FileInputWrapper = (props) => {
-  console.log('field validation props', props)
   return <Field component={FileInput} {...props} />
 }

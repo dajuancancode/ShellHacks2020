@@ -1,14 +1,14 @@
 import React from 'react'
 import history from '../../history'
 import ApplicationForm from '../../Components/ApplicationForm'
-import AuthStore from '../../store/AuthStore'
-import {AuthStoreConsumer} from '../../store/AuthStore/Context'
+import ApplicationStore from '../../store/ApplicationStore'
+import { ApplicationStoreConsumer } from '../../store/ApplicationStore/Context'
 
 import './styles.sass'
 
 const ApplicationPage = ({store})=>{
   const handleSubmit = async (data)=> {
-    const success = await store.signUp(data)
+    const success = await store.create(data)
     if(success) history.push('/dashboard')
   }
   return (
@@ -33,11 +33,11 @@ const ApplicationPage = ({store})=>{
 
 // inject store into page
 const HOC = ()=>(
-  <AuthStore>
-    <AuthStoreConsumer>
+  <ApplicationStore>
+    <ApplicationStoreConsumer>
       {(store)=> <ApplicationPage store={store}/>}
-    </AuthStoreConsumer>
-  </AuthStore>
+    </ApplicationStoreConsumer>
+  </ApplicationStore>
 )
 
 
