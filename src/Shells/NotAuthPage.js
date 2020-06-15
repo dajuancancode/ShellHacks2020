@@ -1,33 +1,33 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import history from '../history'
-import {AuthStoreConsumer} from '../store/AuthStore'
+import AuthStore from '../store/AuthStore/'
+import { AuthStoreConsumer } from '../store/AuthStore/Context'
 import LoadingPage from '../Pages/Loading'
+import { getAuthToken } from '../utils'
 
-
-const AuthPage = ({store,children})=>{
-  useEffect(()=>{
-    store.loading.set(true)
-    if(!store.user){
-      store.getUser().then(()=>{
-      }).catch(()=>{
-        history.push('/')
+const AuthPage = ({ store, Component }) => {
+  useEffect(() => {
+    if (!store.user) {
+      store.getUser().then(success => {
+        if (!success) {
+          history.push('/login')
+        }
       })
     }
-    store.loading(false)
-  },[])
+  }, [store])
 
-  if(store.loading){
+  if (store.loading) {
     return <LoadingPage />
   }
-  return ({children})
+  return <Component store={store} />
 }
 
+const HOC = ({ Component }) => (
+  <AuthStore>
+    <AuthStoreConsumer>
+      {store => <AuthPage store={store} Component={Component} />}
+    </AuthStoreConsumer>
+  </AuthStore>
+)
 
-
-export default ({Component}) =>{
-  return <AuthStoreConsumer>
-      {({store})=>{
-        return <AuthPage store={store} Component={Component}/>
-      }}
-  </AuthStoreConsumer>
-}
+export default HOC

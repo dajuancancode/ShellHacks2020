@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import history from '../../history'
 import LoginForm from '../../Components/LoginForm'
-import ShellHacksLogo from "../../assets/branding/ShellHacks-title.svg";
+import ShellHacksLogo from '../../assets/branding/ShellHacks-title.svg'
 import AuthStore from '../../store/AuthStore'
 import { AuthStoreConsumer } from '../../store/AuthStore/Context'
 
@@ -14,7 +14,7 @@ const LoginPage = ({ store }) => {
   const handleForgotPassword = () => {
     history.push('/forgotPasswordForm')
   }
-  const handleSubmit = async (data) => {
+  const handleSubmit = async data => {
     const success = await store.login(data)
     if (success) history.push('/dashboard')
   }
@@ -24,32 +24,30 @@ const LoginPage = ({ store }) => {
         <div className="LoginPage__cta">
           <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
           <p className="LoginPage__sub-title">Welcome!</p>
-          <p className="LoginPage__text">You're almost there! fill out your <br></br> form info and click the button below.</p>
+          <p className="LoginPage__text">
+            You're almost there! fill out your <br></br> form info and click the button below.
+          </p>
         </div>
-        <LoginForm {...{
-          handleCreateAccount,
-          handleForgotPassword,
-          handleSubmit,
-          loading: store.loading,
-          error: store.error
-        }} />
+        <LoginForm
+          {...{
+            handleCreateAccount,
+            handleForgotPassword,
+            handleSubmit,
+            loading: store.loading,
+            error: store.error
+          }}
+        />
       </div>
-      <div className="LoginPage__footer">
-      </div>
+      <div className="LoginPage__footer"></div>
     </div>
   )
 }
 
-
 // inject store into page
 const HOC = () => (
   <AuthStore>
-    <AuthStoreConsumer>
-      {(store) => <LoginPage store={store} />}
-    </AuthStoreConsumer>
+    <AuthStoreConsumer>{store => <LoginPage store={store} />}</AuthStoreConsumer>
   </AuthStore>
 )
-
-
 
 export default HOC

@@ -319,22 +319,22 @@ const SignUpForm = props => {
   }
 
   const initialValues = {
-    dob: '',
-    gender: '',
-    race: '',
-    phoneNumber: '',
-    schoolName: '',
-    major: '',
-    levelOfStudy: '',
-    graduationYear: '',
-    role: '',
+    dob: '09/20/1999',
+    gender: 'Male',
+    race: 'Male',
+    phoneNumber: '786-298-4409',
+    schoolName: 'school',
+    major: 'string',
+    levelOfStudy: 'string',
+    graduationYear: 'string',
+    role: 'string',
     linkedin: '',
     github: '',
     website: '',
-    dietaryRestrictions: '',
-    travelReinbursement: '',
-    attendedShellHacks: '',
-    howDidYouHear: '',
+    dietaryRestrictions: 'string',
+    travelReinbursement: 'string',
+    attendedShellHacks: 'string',
+    howDidYouHear: 'yo',
     resume: null
   }
 

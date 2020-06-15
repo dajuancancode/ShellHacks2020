@@ -1,35 +1,30 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import history from '../history'
 import AuthStore from '../store/AuthStore'
-import {AuthStoreConsumer} from '../store/AuthStore/Context'
+import { AuthStoreConsumer } from '../store/AuthStore/Context'
 import LoadingPage from '../Pages/Loading'
 
-
-const AuthPage = ({store,Component})=>{
-  useEffect(()=>{
-    if(!store.user){
-      store.getUser().then((success)=>{
-        if(!success){
-          history.push('/signUp')
+const AuthPage = ({ store, Component }) => {
+  useEffect(() => {
+    if (!store.user) {
+      store.getUser().then(success => {
+        if (!success) {
+          history.push('/login')
         }
       })
     }
-  },[store])
+  }, [store])
 
-  if(store.loading){
+  if (store.loading) {
     return <LoadingPage />
   }
-  return <Component />
+  return <Component store={store} />
 }
 
-
-
-export default ({Component}) =>(
+export default ({ Component }) => (
   <AuthStore>
-      <AuthStoreConsumer>
-        {(store)=>(
-          <AuthPage store={store} Component={Component}/>
-        )}
+    <AuthStoreConsumer>
+      {store => <AuthPage store={store} Component={Component} />}
     </AuthStoreConsumer>
   </AuthStore>
 )
