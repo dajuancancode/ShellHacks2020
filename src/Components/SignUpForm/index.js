@@ -13,6 +13,7 @@ const SignUpForm = (props)=>{
       placeholder: 'Email Address',
       type:"email",
       id:"email",
+      label: "Email Address"
     },
     {
       name: 'firstName',
@@ -20,6 +21,7 @@ const SignUpForm = (props)=>{
       placeholder: 'First Name',
       type:"firstName",
       id:"firstName",
+      label: "First Name"
     },
     {
       name: 'lastName',
@@ -27,6 +29,7 @@ const SignUpForm = (props)=>{
       placeholder: 'Last Name',
       type:"lastName",
       id:"lastName",
+      label: "Last Name"
     },
     {
       name: 'password',
@@ -34,6 +37,7 @@ const SignUpForm = (props)=>{
       placeholder: 'password',
       type:"password",
       id:"password",
+      label: "Password"
     },
     {
       name: 'confirmPassword',
@@ -41,6 +45,7 @@ const SignUpForm = (props)=>{
       placeholder: 'Confirm Password',
       type:"password",
       id:"confirmPassword",
+      label: "Confirm Password"
     }
   ]
 
