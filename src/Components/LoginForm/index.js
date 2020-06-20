@@ -13,6 +13,7 @@ const LoginForm = (props)=>{
       placeholder: 'Email Address',
       type:"email",
       id:"email",
+      label: "Email Address"
     },
     {
       name: 'password',
@@ -20,11 +21,12 @@ const LoginForm = (props)=>{
       placeholder: 'password',
       type:"password",
       id:"password",
+      label: "Password"
     },
   ]
 
   inputs.forEach((input)=>{
-    input.className = "SignUpForm__input"
+    input.className = "LoginForm__input"
   })
 
 
