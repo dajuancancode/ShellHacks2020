@@ -72,6 +72,7 @@ const SignUpForm = props => {
               label: 'American Indian or Alaskan Native'
             },
             { value: 'Asian / Pacific Islander', label: 'Asian / Pacific Islander' },
+            { value: 'Black / African American', label: 'Black / African American' },
             { value: 'Hispanic or Latinx', label: 'Hispanic or Latinx' },
             { value: 'White / Caucasian', label: 'White / Caucasian' },
             { value: 'Other', label: 'Other' },
