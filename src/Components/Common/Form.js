@@ -33,6 +33,7 @@ const Form = ({
       >
         {formik => (
           <>
+<<<<<<< HEAD
             {/* Uncomment for debbuging */}
             {/* {JSON.stringify(formik.values)}
             {JSON.stringify(formik.errors)} */}
@@ -72,6 +73,33 @@ const Form = ({
         {store.error && <div>{store.error}</div>}
       </div>
     </div>
+=======
+            <Input
+          {...input} 
+          key={input.name}
+          handleChange={formik.handleChange} 
+          value={formik.values[input.name]}
+          errors = {formik.errors[input.name]}
+          touched = {formik.touched[input.name]}
+          {...(fieldValidation[input.name] ? {validate: fieldValidation[input.name]} : {})}
+           />
+           </>
+        ))}
+        <div className={classes('btn-container')}>
+        <button type="submit" onClick={formik.handleSubmit} className={classes('submit-btn')}>{buttonText}</button>
+          {Component && <Component/>}
+        </div>
+      </FormikForm>
+      </>
+    )
+  }
+  </Formik>
+  <div className={classes("status")}>
+      {store.loading && <Loading />}
+      {store.error && <div>{store.error}</div>}
+  </div>
+  </div>
+>>>>>>> Created a grid for personal info section
   )
 }
 

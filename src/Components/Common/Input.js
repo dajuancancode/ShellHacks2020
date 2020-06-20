@@ -74,9 +74,12 @@ const DropDown = ({ name, label, placeholder, className, id, validate, choices }
           {placeholder}
         </option>
         {choices.map(choice => (
-          <option value={choice.value}>{choice.label}</option>
+          <option key={choice.label} value={choice.value}>
+            {choice.label}
+          </option>
         ))}
       </Field>
+      {errors && touched && <p className={errorsClass}>{errors}</p>}
     </div>
   )
 }
