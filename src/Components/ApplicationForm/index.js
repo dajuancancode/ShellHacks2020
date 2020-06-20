@@ -69,6 +69,7 @@ const SignUpForm = (props)=>{
           choices: [
             {value:'American Indian or Alaskan Native',label:'American Indian or Alaskan Native'},
             {value:"Asian / Pacific Islander",label:"Asian / Pacific Islander"},
+            {value:"Black / African American",label:"Black / African American"},
             {value:"Hispanic or Latinx",label:"Hispanic or Latinx"},
             {value:"White / Caucasian",label:"White / Caucasian"},
             {value:"Other",label:"Other"},
@@ -312,28 +313,28 @@ const SignUpForm = (props)=>{
 
 
   const schema = object().shape({
-    firstName: string().required("First Name is Required"),
-    lastName: string().required("Last Name is Required"),
-    email: validEmail("Please enter your email address in format: yourname@example.com").required("Email is Required"),
-    dob: validDate("Not a Valid Date").required("Date is Required"),
-    gender: string().required("Genderis Required"),
-    race: string().required("Race is Required"),
+    firstName: string().required("Required"),
+    lastName: string().required("Required"),
+    email: validEmail("Please enter your email address in format: yourname@example.com").required("Required"),
+    dob: validDate("Not a Valid Date").required("Required"),
+    gender: string().required("Required"),
+    race: string().required("Required"),
     phoneNumber: validPhoneNumber("Please enter your phone number in format: ###-###-####"),
-    state: string().required("State is Required"),
-    country: string().required("Country is Required"),
-    schoolName: string().required("School Name is Required"),
-    major: string().required("Major is Required"),
-    levelOfStudy: string().required("Level of Study is Required"),
-    graduationYear: string().required("Graduation Year is Required"),
+    state: string().required("Required"),
+    country: string().required("Required"),
+    schoolName: string().required("Required"),
+    major: string().required("Required"),
+    levelOfStudy: string().required("Required"),
+    graduationYear: string().required("Required"),
     role: string().required("Role is Required"),
     linkedIn: string(),
     github: string(),
     website: string(),
-    dietaryRestrictions: string().required("Dietary Restrictions is Required"),
-    travelReinbursement: string().required("Travel Reinbursement is Required"),
+    dietaryRestrictions: string().required("Required"),
+    travelReinbursement: string().required("Required"),
     attendedShellHacks: string(),
     howDidYouHear: string(),
-    resume: validPDF("Please upload a PDF")
+    resume: validPDF()
   })
 
   const validation = (values) => {
