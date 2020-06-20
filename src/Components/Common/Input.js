@@ -116,7 +116,10 @@ const SelectField = ({ choices, field, form, validate }) => {
       borderRadius: '6px',
       padding: '3px',
       fontWeight: 500,
-      color: '#000'
+      color: '#000',
+      '&:hover': {
+        border: '2px solid #0AD2DF'
+      }
     }),
     option: (base, state) => ({
       ...base,
