@@ -86,7 +86,7 @@ const DropDown = ({ name, label, placeholder, className, id, validate, choices }
 
 export default Input
 
-const height = 35
+const height = 50
 
 class MenuList extends React.Component {
   render() {
@@ -107,10 +107,30 @@ class MenuList extends React.Component {
   }
 }
 
-const SelectField = ({ choices, field, form, ...rest }) => {
+const SelectField = ({ choices, field, form, validate }) => {
+  const customStyles = {
+    control: (base, state) => ({
+      ...base,
+      border: '2px solid #0AD2DF',
+      background: 'transparent',
+      borderRadius: '6px',
+      padding: '3px',
+      fontWeight: 500,
+      color: '#000'
+    }),
+    option: (base, state) => ({
+      ...base,
+      color: '#000'
+    }),
+    singleValue: (base, state) => ({
+      ...base,
+      color: '#fff'
+    })
+  }
+
   return (
     <Select
-      {...rest}
+      styles={customStyles}
       filterOption={createFilter({ ignoreAccents: false })}
       components={{ MenuList }}
       options={choices}
@@ -123,29 +143,46 @@ const SelectField = ({ choices, field, form, ...rest }) => {
   )
 }
 
-const SearchableDropDown = props => <Field component={SelectField} {...props} />
-
-const FileInput = ({ field, form, ...props }) => {
-  const TextInputClasses = cx('FileInput', {
+const SearchableDropDown = props => {
+  const TextInputClasses = cx('TextInput', {
     [props.className]: props.className
   })
+
   return (
     <div className={TextInputClasses}>
-      {props.label && <label htmlFor={field.name}>{props.label}</label>}
-      <input
-        type="file"
-        name={field.name}
-        id={field.id}
-        onChange={async event => {
-          const file = await event.currentTarget.files[0]
-          form.setFieldValue(field.name, file)
-          form.validateField(field.name)
-        }}
-      />
+      {props.label && <label htmlFor={props.name}>{props.label}</label>}
+      <Field component={SelectField} {...props} />
+      {props.errors && props.touched && <p className={props.errorsClass}>{props.errors}</p>}
     </div>
   )
 }
 
+const FileInput = ({ field, form, ...props }) => {
+  console.log('field stuff', props)
+  return (
+    <input
+      type="file"
+      name={field.name}
+      id={field.id}
+      // eslint-disable-next-line prettier/prettier
+        onChange={async event => {
+        const file = await event.currentTarget.files[0]
+        form.setFieldValue(field.name, file)
+        form.validateField(field.name)
+      }}
+    />
+  )
+}
+
 const FileInputWrapper = props => {
-  return <Field component={FileInput} {...props} />
+  const TextInputClasses = cx('FileInput', {
+    [props.className]: props.className
+  })
+
+  return (
+    <div className={TextInputClasses}>
+      {props.label && <label htmlFor={props.name}>{props.label}</label>}
+      <Field component={FileInput} {...props} />
+    </div>
+  )
 }

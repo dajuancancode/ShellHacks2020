@@ -48,7 +48,6 @@ const Form = ({
                         className={classes(input.className)}
                         handleChange={formik.handleChange}
                         value={formik.values[input.name]}
-<<<<<<< HEAD
                         {...(fieldValidation[input.name]
                           ? { validate: fieldValidation[input.name] }
                           : {})}
@@ -56,13 +55,6 @@ const Form = ({
                       {formik.errors[input.name] && formik.touched[input.name] && (
                         <div className={classes('error')}>{formik.errors[input.name]}</div>
                       )}
-=======
-                        errors = {formik.errors[input.name]}
-                        touched = {formik.touched[input.name]}
-                        errorsClass = {classes("error")}
-                        {...(fieldValidation[input.name] ? { validate: fieldValidation[input.name] } : {})}
-                      />
->>>>>>> Created a grid for personal info section
                     </>
                   ))}
                 </div>

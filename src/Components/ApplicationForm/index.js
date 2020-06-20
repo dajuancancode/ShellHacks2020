@@ -11,7 +11,7 @@ const SignUpForm = props => {
   const sections = [
     {
       title: 'Personal Information',
-      className: 'information',
+      className: 'personalInfo',
       inputs: [
         {
           name: 'firstName',
@@ -49,9 +49,9 @@ const SignUpForm = props => {
           name: 'gender',
           label: 'Gender',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'gender',
-          className: ['dropdown', 'gender'].join(' '),
+          className: ['searchable-dropdown', 'gender'].join(' '),
           choices: [
             { value: 'Male', label: 'Male' },
             { value: 'Female', label: 'Female' },
@@ -63,9 +63,9 @@ const SignUpForm = props => {
           name: 'race',
           label: 'Race / Ethnicity',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'race',
-          className: ['dropdown', 'race'].join(' '),
+          className: ['searchable-dropdown', 'race'].join(' '),
           choices: [
             {
               value: 'American Indian or Alaskan Native',
@@ -106,6 +106,7 @@ const SignUpForm = props => {
     },
     {
       title: 'School Information',
+      className: 'schoolInfo',
       inputs: [
         {
           name: 'schoolName',
@@ -113,25 +114,25 @@ const SignUpForm = props => {
           placeholder: 'Select one',
           type: 'searchable-dropdown',
           id: 'schoolName',
-          className: 'searchable-dropdown',
+          className: ['searchable-dropdown', 'schoolName'].join(' '),
           choices: schools
         },
         {
           name: 'major',
           label: 'Major',
           placeholder: 'Select One',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'major',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'major'].join(' '),
           choices: majors
         },
         {
           name: 'levelOfStudy',
           label: 'level Of Study',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'levelOfStudy',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'levelOfStudy'].join(' '),
           choices: [
             { value: 'BootCamp Student', label: 'BootCamp Student' },
             { value: 'Freshman', label: 'Freshman' },
@@ -147,9 +148,9 @@ const SignUpForm = props => {
           name: 'graduationYear',
           label: 'Graduation Year',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'graduationYear',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'graduationYear'].join(' '),
           choices: [
             { value: '2019', label: '2019' },
             { value: '2020', label: '2020' },
@@ -165,14 +166,15 @@ const SignUpForm = props => {
     },
     {
       title: 'Professional Information',
+      className: 'professionalInfo',
       inputs: [
         {
           name: 'role',
           label: 'Which role best describes you?',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'role',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'role'].join(' '),
           choices: [
             { value: 'Artist', label: 'Artist' },
             { value: 'Backe-end Developer', label: 'Backe-end Developer' },
@@ -194,7 +196,15 @@ const SignUpForm = props => {
           placeholder: 'https://www.linkedin.com/cool-guy',
           type: 'text',
           id: 'linkedIn',
-          className: 'input'
+          className: ['input', 'linkedIn'].join(' ')
+        },
+        {
+          name: 'resume',
+          label: 'resume',
+          placeholder: '',
+          type: 'file',
+          id: 'resume',
+          className: ['file', 'resume'].join(' ')
         },
         {
           name: 'github',
@@ -202,7 +212,7 @@ const SignUpForm = props => {
           placeholder: 'https://www.github.com/cool-guy',
           type: 'text',
           id: 'github',
-          className: 'input'
+          className: ['input', 'github'].join(' ')
         },
         {
           name: 'website',
@@ -210,29 +220,30 @@ const SignUpForm = props => {
           placeholder: 'https://www.coolguy.com',
           type: 'text',
           id: 'website',
-          className: 'input'
+          className: ['input', 'website'].join(' ')
         }
       ]
     },
     {
       title: 'Additional Information',
+      className: 'additionalInfo',
       inputs: [
         {
           name: 'dietaryRestrictions',
           label: 'Any dietary restrictions',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'dietaryResctrictions',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'dietaryRestrictions'].join(' '),
           choices: dietaryRestrictions
         },
         {
           name: 'travelReinbursement',
           label: 'Need travel reinbursement?',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'travelReinbursement',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'travelReinbursement'].join(' '),
           choices: [
             { label: 'Yes', value: true },
             { label: 'No', value: false }
@@ -240,11 +251,11 @@ const SignUpForm = props => {
         },
         {
           name: 'attendedShellHacks',
-          label: 'have yout attended Shellhacks before?',
+          label: 'have you attended Shellhacks before?',
           placeholder: 'Select one',
-          type: 'dropdown',
-          id: 'travelReinbursement',
-          className: 'dropdown',
+          type: 'searchable-dropdown',
+          id: 'attendedShellHacks',
+          className: ['searchable-dropdown', 'attendedShellHacks'].join(' '),
           choices: [
             { label: 'Shellacks 2017', value: 'Shellacks 2017' },
             { label: 'Shellacks 2018', value: 'Shellacks 2018' },
@@ -255,9 +266,9 @@ const SignUpForm = props => {
           name: 'howDidYouHear',
           label: 'How did you hear about us?',
           placeholder: 'Select one',
-          type: 'dropdown',
+          type: 'searchable-dropdown',
           id: 'howDidYouHear',
-          className: 'dropdown',
+          className: ['searchable-dropdown', 'howDidYouHear'].join(' '),
           choices: [
             {
               value: 'Email',
@@ -296,14 +307,6 @@ const SignUpForm = props => {
               label: 'Other'
             }
           ]
-        },
-        {
-          name: 'resume',
-          label: 'resume',
-          placeholder: '',
-          type: 'file',
-          id: 'resume',
-          className: 'file'
         }
       ]
     }
