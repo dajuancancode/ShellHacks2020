@@ -38,9 +38,11 @@ const Form = ({ initialValues, validate, onSubmit, sections, buttonText, classNa
                         className={classes(input.className)}
                         handleChange={formik.handleChange}
                         value={formik.values[input.name]}
+                        errors = {formik.errors[input.name]}
+                        touched = {formik.touched[input.name]}
+                        errorsClass = {classes("error")}
                         {...(fieldValidation[input.name] ? { validate: fieldValidation[input.name] } : {})}
                       />
-                      {formik.errors[input.name] && formik.touched[input.name] && <div className={classes('error')}>{formik.errors[input.name]}</div>}
                     </>
                   ))}
                 </div>

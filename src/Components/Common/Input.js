@@ -18,7 +18,7 @@ const Input = (props) => {
 }
 
 
-const TextInput = ({name,value,label,placeholder,className,type,id,validate})=>{
+const TextInput = ({name,value,label,placeholder,className,type,id,validate, errors, touched, errorsClass})=>{
   const TextInputClasses = cx("TextInput",{
     [className]: className
   })
@@ -35,11 +35,12 @@ const TextInput = ({name,value,label,placeholder,className,type,id,validate})=>{
     placeholder={placeholder}
     {...(validate ? {validate} : {})}
     />
+    {errors && touched &&  <p className={errorsClass}>{errors}</p>}
   </div>
  )
 }
 
-const DropDown = ({ name, label, placeholder, className, id, validate,choices }) => {
+const DropDown = ({ name, label, placeholder, className, id, validate,choices, errors, touched, errorsClass}) => {
   const TextInputClasses = cx("TextInput", {
     [className]: className
   })
@@ -58,6 +59,7 @@ const DropDown = ({ name, label, placeholder, className, id, validate,choices })
           <option value={choice.value}>{choice.label}</option>
         ))}
       </Field>
+      {errors && touched &&  <p className={errorsClass}>{errors}</p>}
     </div>
   )
 }

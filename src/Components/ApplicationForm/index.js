@@ -1,6 +1,6 @@
 import React from 'react'
 import {object,reach,string} from 'yup'
-import { validPhoneNumber, validDate,validPDF} from '../Util/validation'
+import { validPhoneNumber, validDate,validPDF, validEmail} from '../Util/validation'
 import SectionForm from '../Common/SectionForm'
 import schools from '../../config/schools.json'
 import majors from '../../config/majors.json'
@@ -12,14 +12,39 @@ const SignUpForm = (props)=>{
   const sections = [
     {
       title: 'Personal Information',
+      className: 'information',
       inputs:[
+        {
+          name: 'firstName',
+          label: 'First Name',
+          placeholder: 'First Name',
+          type: "text",
+          id: "firstName",
+          className: ["input", "firstName"].join(" ")
+        },
+        {
+          name: 'lastName',
+          label: 'Last Name',
+          placeholder: 'Last Name',
+          type: "text",
+          id: "lastName",
+          className: ["input", "lastName"].join(" ")
+        },
+        {
+          name: 'email',
+          label: 'School Email Address',
+          placeholder: 'School Email Address',
+          type: "email",
+          id: "email",
+          className: ["input", "email"].join(" ")
+        },
         {
           name: 'dob',
           label: 'Date of Birth',
           placeholder: '09/20/1999',
           type: "text",
           id: "dob",
-          className: "input",
+          className: ["input", "dob"].join(" ")
         },
         {
           name: 'gender',
@@ -27,7 +52,7 @@ const SignUpForm = (props)=>{
           placeholder: 'Select one',
           type: "dropdown",
           id: "gender",
-          className: "dropdown",
+          className: ["dropdown", "gender"].join(" "),
           choices: [
             {value:'Male',label:'Male'},
             {value:"Female",label:"Female"},
@@ -41,7 +66,7 @@ const SignUpForm = (props)=>{
           placeholder: 'Select one',
           type: "dropdown",
           id: "race",
-          className: "dropdown",
+          className: ["dropdown", "race"].join(" "),
           choices: [
             {value:'American Indian or Alaskan Native',label:'American Indian or Alaskan Native'},
             {value:"Asian / Pacific Islander",label:"Asian / Pacific Islander"},
@@ -53,12 +78,28 @@ const SignUpForm = (props)=>{
         },
         {
           name: 'phoneNumber',
-          label: 'phoneNumber',
+          label: 'phone Number',
           placeholder: '305-867-5309',
           type: "phone",
           id: "phoneNumber",
-          className: "input",
+          className: ["input", "phoneNumber"].join(" ")
         },
+        {
+          name: 'state',
+          label: 'State (if applicable)',
+          placeholder: 'CA, FL, NY, AZ, etc.',
+          type: "text",
+          id: "state",
+          className: ["input", "state"].join(" ")
+        },
+        {
+          name: 'country',
+          label: 'Country',
+          placeholder: 'Country Name',
+          type: "text",
+          id: "country",
+          className: ["input", "country"].join(" ")
+        }
       ]
     },
     {
@@ -269,10 +310,15 @@ const SignUpForm = (props)=>{
 
 
   const schema = object().shape({
+    firstName: string().required(),
+    lastName: string().required(),
+    email: validEmail().required(),
     dob: validDate().required(),
     gender: string().required(),
     race: string().required(),
     phoneNumber: validPhoneNumber(),
+    state: string().required(),
+    country: string().required(),
     schoolName: string().required(),
     major: string().required(),
     levelOfStudy: string().required(),
@@ -300,10 +346,15 @@ const SignUpForm = (props)=>{
     })
   
   const fieldValidation = {
+    firstName: async (s) => await validateHelper(s ,'firstName'),
+    lastName: async (s) => await validateHelper(s ,'lastName'),
+    email: async (s) => await validateHelper(s ,'email'),
     dob: async (d) => await validateHelper(d,'dob'),
     gender: async (s)=> await validateHelper(s,'gender'),
     race: async (s)=> await validateHelper(s,'race'),
     phoneNumber: async (s) => await validateHelper(s, 'phoneNumber'),
+    state: async (s) => await validateHelper(s ,'state'),
+    country: async (s) => await validateHelper(s ,'country'),
     schoolName: async (s) => await validateHelper(s, 'schoolName'),
     major: async (s) => await validateHelper(s, 'major'),
     levelOfStudy: async (s) => await validateHelper(s, 'levelOfStudy'),
@@ -320,10 +371,15 @@ const SignUpForm = (props)=>{
   }
 
   const initialValues = {
+    firstName: '',
+    lastName: '',
+    email: '',
     dob: '',
     gender: '',
     race: '',
     phoneNumber: '',
+    state: '',
+    country: '',
     schoolName: '',
     major: '',
     levelOfStudy: '',

@@ -34,9 +34,10 @@ const Form = ({initialValues,validate,onSubmit,inputs,buttonText,className="",fi
           key={input.name}
           handleChange={formik.handleChange} 
           value={formik.values[input.name]}
+          errors = {formik.errors[input.name]}
+          touched = {formik.touched[input.name]}
           {...(fieldValidation[input.name] ? {validate: fieldValidation[input.name]} : {})}
            />
-           {formik.errors[input.name] && formik.touched[input.name] &&  <div className={classes('error')}>{formik.errors[input.name]}</div>}
            </>
         ))}
         <div className={classes('btn-container')}>
