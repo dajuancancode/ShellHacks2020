@@ -69,7 +69,7 @@ export default Input
 
 
 
-const height = 35;
+const height = 50;
 
 class MenuList extends React.Component {
   render() {
@@ -96,11 +96,33 @@ const SelectField = ({
   choices,
   field,
   form,
-  ...rest
+  validate
 }) => {
+
+  const customStyles = {
+    control:  (base, state) => ({
+      ...base,
+      border: "2px solid #0AD2DF",
+      background: "transparent",
+      borderRadius: "6px",
+      padding: "3px",
+      fontWeight: 500,
+      color: "#000"
+    }),
+    option: (base, state) => ({
+      ...base,
+      color: "#000"
+    }),
+    singleValue: (base, state) => ({
+      ...base,
+      color: "#fff"
+    }),
+  }
+
   return (
+    
     <Select
-      {...rest}
+      styles = {customStyles}
       filterOption={createFilter({ ignoreAccents: false })}
       components={{ MenuList }}
       options={choices}
@@ -109,26 +131,32 @@ const SelectField = ({
         form.setFieldValue(field.name, option.value)
       }}
       onBlur = { field.onBlur }
+      {...(validate ? { validate } : {})}
     />
   )
 }
 
 
-const SearchableDropDown = (props) =>(
-  <Field component={SelectField} {...props} />
-)
+const SearchableDropDown = (props) => {
+  const TextInputClasses = cx("TextInput", {
+    [props.className]: props.className
+  })
+
+  return (
+    <div className={TextInputClasses}>
+      {props.label && <label htmlFor={props.name} >{props.label}</label>}
+      <Field component={SelectField} {...props} />
+      {props.errors && props.touched &&  <p className={props.errorsClass}>{props.errors}</p>}
+    </div>
+  )
+}
 
 
 
 const FileInput = ({field,form,...props}) => {
   console.log('field stuff',props)
-  const TextInputClasses = cx("FileInput", {
-    [props.className]: props.className
-  })
   return (
-    <div
-      className={TextInputClasses}>
-      {props.label && <label htmlFor={field.name} >{field.label}</label>}
+    
       <input
         type="file"
         name={field.name}
@@ -139,11 +167,23 @@ const FileInput = ({field,form,...props}) => {
           form.validateField(field.name)
         }}
       />
-    </div>
+    
   )
 }
 
 const FileInputWrapper = (props) => {
+
+  const TextInputClasses = cx("FileInput", {
+    [props.className]: props.className
+  })
+
   console.log('field validation props', props)
-  return <Field component={FileInput} {...props} />
+
+  return (
+    <div
+      className={TextInputClasses}>
+      {props.label && <label htmlFor={props.name} >{props.label}</label>}
+      <Field component={FileInput} {...props} />
+    </div>
+  )
 }
