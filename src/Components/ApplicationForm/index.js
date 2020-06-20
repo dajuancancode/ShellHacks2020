@@ -41,7 +41,6 @@ const SignUpForm = (props)=>{
         {
           name: 'dob',
           label: 'Date of Birth',
-          placeholder: new Date("09/20/1999"),
           type: "date",
           id: "dob",
           className: ["input", "dob"].join(" ")

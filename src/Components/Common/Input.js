@@ -159,7 +159,7 @@ const SearchableDropDown = (props) => {
 
 
 const FileInput = ({field,form,...props}) => {
-  console.log('field stuff',props)
+
   return (
     
       <input
@@ -182,7 +182,6 @@ const FileInputWrapper = (props) => {
     [props.className]: props.className
   })
 
-  console.log('field validation props', props)
 
   return (
     <div
@@ -202,7 +201,8 @@ const DateInput = ({field, form, value, placeholder,  ...props}) => {
       id={field.id}
       placeholder={placeholder}
       onChange={async(event) => {
-        form.setFieldValue(field.name,value);
+        const date = await event.currentTarget.value
+        form.setFieldValue(field.name,date);
         form.validateField(field.name)
       }}
     />
@@ -215,8 +215,6 @@ const DateInputWrapper = (props) => {
   const TextInputClasses = cx("DateInput", {
     [props.className]: props.className
   })
-
-  console.log('field validation props', props)
 
   return (
     <div
