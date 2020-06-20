@@ -15,35 +15,40 @@ const SignUpForm = props => {
       icon: 'email',
       placeholder: 'Email Address',
       type: 'email',
-      id: 'email'
+      id: 'email',
+      label: 'Email Address'
     },
     {
       name: 'firstName',
       icon: 'person',
       placeholder: 'First Name',
       type: 'firstName',
-      id: 'firstName'
+      id: 'firstName',
+      label: 'First Name'
     },
     {
       name: 'lastName',
       icon: 'person',
       placeholder: 'Last Name',
       type: 'lastName',
-      id: 'lastName'
+      id: 'lastName',
+      label: 'Last Name'
     },
     {
       name: 'password',
       icon: 'lock',
       placeholder: 'password',
       type: 'password',
-      id: 'password'
+      id: 'password',
+      label: 'Password'
     },
     {
       name: 'confirmPassword',
       icon: 'lock',
       placeholder: 'Confirm Password',
       type: 'password',
-      id: 'confirmPassword'
+      id: 'confirmPassword',
+      label: 'Confirm Password'
     }
   ]
 
