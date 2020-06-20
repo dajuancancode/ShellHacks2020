@@ -5,16 +5,24 @@
   width: 100%
   &__personalInfo, &__schoolInfo, &__professionalInfo, &__additionalInfo
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    grid-template-columns: 1fr
     column-gap: 16px
     grid-auto-rows: min-content
     align-items: center
+    @media(min-width: $tablet-width)
+      grid-template-columns: repeat(2, 1fr)
   &__personalInfo
     grid-template-rows: repeat(10, 1fr)
+    @media(min-width: $tablet-width)
+      grid-template-rows: repeat(6, 1fr)
   &__schoolInfo, &__additionalInfo
     grid-template-rows: repeat(5, 1fr)
+    @media(min-width: $tablet-width)
+      grid-template-rows: repeat(3, 1fr)
   &__professionalInfo
     grid-template-rows: repeat(6, 1fr)
+    @media(min-width: $tablet-width)
+      grid-template-rows: repeat(4, 1fr)
   &__section-title
     font-weight: 600
     font-size: 20px
@@ -22,12 +30,16 @@
     align-self: center
     justify-self: center
     grid-area: 1 / 1 / 2 / -1
+    @media(min-width: $tablet-width)
+      font-size: 32px
   &__input label,&__dropdown label, &__searchable-dropdown label, &__file label
     font-weight: 400
     margin-bottom: 6px
     display: block
     text-transform: capitalize
-    color: #fff
+    color: #ffffff
+    @media(min-width: $tablet-width)
+      font-size: 20px
   &__input input, &__dropdown select, &__file input
     background: transparent
     background-position: right center
@@ -62,7 +74,7 @@
     border-radius: 6px
     padding: 15px 20px
     color: #fff
-    font-weight: 700
+    font-weight: 600
     font-size: 20px
     letter-spacing: 1.2px
     margin-bottom: 20px
@@ -84,64 +96,80 @@
     grid-area: 2 / 1 / 3 / 2
 
 .lastName
-  grid-area: 2 / 1 / 3 / -1
+  grid-area: 3 / 1 / 4 / -1
   @media(min-width: $tablet-width)
     grid-area: 2 / 2 / 3 / -1
 
 .email
-  grid-column: 1 / -1
-  grid-row: 4 / 5
+  grid-area: 4 / 1 / 5 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 3 / 1 / 4 / -1
 
 .dob
-  grid-column: 1 / -1
-  grid-row: 5 / 6
-
+  grid-area: 5 / 1 / 6 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 4 / 1 / 5 / 2
 .gender
-  grid-column: 1 / -1
-  grid-row: 6 / 7
+  grid-area: 6 / 1 / 7 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 4 / 2 / 5 / -1
 
 .race
-  grid-column: 1 / -1
-  grid-row: 7 / 8
+  grid-area: 7 / 1 / 8 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 5 / 1 / 6 / 2
 
 .phoneNumber
-  grid-column: 1 / -1
-  grid-row: 8 / 9
+  grid-area:8 / 1 / 9 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 5 / 2 / 6 / -1
 
 .state
-  grid-column: 1 / -1
-  grid-row: 9 / 10
+  grid-area: 9 / 1 / 10 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 6 / 1 / 7 / 2
 
 .country
-  grid-column: 1 / -1
-  grid-row: 10 / -1
+  grid-area: 10 / 1 / -1 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 6 / 2  / 7 / -1
 
 /* School and Additional Information*/
 
 .schoolName, .dietaryRestrictions
   grid-area: 2 / 1 / 3 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 2 / 1  / 3 / 2
 .major, .travelReinbursement
   grid-area: 3 / 1 / 4 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 2 / 2  / 3 / -1
 
 .levelOfStudy, .attendedShellHacks
   grid-area: 4 / 1 / 5 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 3 / 2  / 4 / -1
 .graduationYear, .howDidYouHear
   grid-area: 5 / 1 / 6 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 3 / 1  / 4 / 2
 /* Professional Information*/
 .role
   grid-area: 2 / 1 / 3 / -1
 
 .linkedIn
   grid-area: 3 / 1 / 4 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 3 / 1 / 4 / 2
 .resume
   grid-area: 4 / 1 / 5 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 3 / 2 / 4 / -1
 .github
   grid-area: 5 / 1 / 6 / -1
-
+  @media(min-width: $tablet-width)
+    grid-area: 4 / 1 / 5 / 2
 .website
   grid-area: 6 / 1 / -1 / -1
+  @media(min-width: $tablet-width)
+    grid-area: 4 / 2 / 5 / -1
