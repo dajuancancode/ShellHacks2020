@@ -163,7 +163,6 @@ const SearchableDropDown = props => {
 }
 
 const FileInput = ({ field, form, ...props }) => {
-  console.log('field stuff', props)
   return (
     <input
       type="file"
@@ -212,8 +211,6 @@ const DateInputWrapper = props => {
   const TextInputClasses = cx('DateInput', {
     [props.className]: props.className
   })
-
-  console.log('field validation props', props)
 
   return (
     <div className={TextInputClasses}>
