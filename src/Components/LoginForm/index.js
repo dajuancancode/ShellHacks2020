@@ -11,19 +11,21 @@ const LoginForm = props => {
       icon: 'email',
       placeholder: 'Email Address',
       type: 'email',
-      id: 'email'
+      id: 'email',
+      label: 'Email Address'
     },
     {
       name: 'password',
       icon: 'lock',
       placeholder: 'password',
       type: 'password',
-      id: 'password'
+      id: 'password',
+      label: 'Password'
     }
   ]
 
   inputs.forEach(input => {
-    input.className = 'SignUpForm__input'
+    input.className = 'LoginForm__input'
   })
 
   const schema = object().shape({
