@@ -6,6 +6,8 @@ import cx from 'classnames'
 
 const Input = props => {
   switch (props.type) {
+    case 'date':
+      return <DateInputWrapper {...props} />
     case 'dropdown':
       return <DropDown {...props} />
     case 'searchable-dropdown':
@@ -186,6 +188,37 @@ const FileInputWrapper = props => {
     <div className={TextInputClasses}>
       {props.label && <label htmlFor={props.name}>{props.label}</label>}
       <Field component={FileInput} {...props} />
+    </div>
+  )
+}
+
+const DateInput = ({ field, form, placeholder, ...props }) => {
+  return (
+    <input
+      {...props}
+      type="date"
+      name={field.name}
+      id={field.id}
+      placeholder={placeholder}
+      onChange={async e => {
+        form.setFieldValue(field.name, e.currentTarget.value)
+        form.validateField(field.name)
+      }}
+    />
+  )
+}
+
+const DateInputWrapper = props => {
+  const TextInputClasses = cx('DateInput', {
+    [props.className]: props.className
+  })
+
+  console.log('field validation props', props)
+
+  return (
+    <div className={TextInputClasses}>
+      {props.label && <label htmlFor={props.name}>{props.label}</label>}
+      <Field component={DateInput} {...props} />
     </div>
   )
 }

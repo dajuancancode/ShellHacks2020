@@ -40,8 +40,8 @@ const SignUpForm = props => {
         {
           name: 'dob',
           label: 'Date of Birth',
-          placeholder: '09/20/1999',
-          type: 'text',
+          placeholder: 'MM/DD/YYYY',
+          type: 'date',
           id: 'dob',
           className: ['input', 'dob'].join(' ')
         },
@@ -313,28 +313,28 @@ const SignUpForm = props => {
   ]
 
   const schema = object().shape({
-    firstName: string().required(),
-    lastName: string().required(),
-    email: validEmail().required(),
-    dob: validDate().required(),
-    gender: string().required(),
-    race: string().required(),
-    phoneNumber: validPhoneNumber(),
-    state: string().required(),
-    country: string().required(),
-    schoolName: string().required(),
-    major: string().required(),
-    levelOfStudy: string().required(),
-    graduationYear: string().required(),
-    role: string().required(),
+    firstName: string().required('First Name is Required'),
+    lastName: string().required('Last Name is Required'),
+    email: validEmail('Please enter your email address in format: yourname@example.com'),
+    dob: validDate('Not a Valid Date').required('Date is Required'),
+    gender: string().required('Genderis Required'),
+    race: string().required('Race is Required'),
+    phoneNumber: validPhoneNumber('Please enter your phone number in format: ###-###-####'),
+    state: string().required('State is Required'),
+    country: string().required('Country is Required'),
+    schoolName: string().required('School Name is Required'),
+    major: string().required('Major is Required'),
+    levelOfStudy: string().required('Level of Study is Required'),
+    graduationYear: string().required('Graduation Year is Required'),
+    role: string().required('Role is Required'),
     linkedIn: string(),
     github: string(),
     website: string(),
-    dietaryRestrictions: string().required(),
-    travelReinbursement: string().required(),
-    attendedShellHacks: string().required(),
-    howDidYouHear: string().required(),
-    resume: validPDF().required()
+    dietaryRestrictions: string().required('Dietary Restrictions is Required'),
+    travelReinbursement: string().required('Travel Reinbursement is Required'),
+    attendedShellHacks: string(),
+    howDidYouHear: string(),
+    resume: validPDF('Please upload a PDF')
   })
 
   const validation = values => {}
