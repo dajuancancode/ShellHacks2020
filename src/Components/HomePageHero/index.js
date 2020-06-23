@@ -1,14 +1,14 @@
-import React from "react";
-import "./styles.sass";
-import discordLogo from "../../assets/social-media/discord.svg";
-import faceBookLogo from "../../assets/social-media/facebook.svg";
-import instagramLogo from "../../assets/social-media/instagram.svg";
-import twitterLogo from "../../assets/social-media/twitter.svg";
-import linkedinLogo from "../../assets/social-media/linkedin.svg";
-import ShellHacksLogo from "../../assets/branding/ShellHacks-title.svg";
-import futuristicBuilding from "../../assets/branding/smart-city.svg";
+import React from 'react'
+import './styles.sass'
+import discordLogo from '../../assets/social-media/discord.svg'
+import faceBookLogo from '../../assets/social-media/facebook.svg'
+import instagramLogo from '../../assets/social-media/instagram.svg'
+import twitterLogo from '../../assets/social-media/twitter.svg'
+import linkedinLogo from '../../assets/social-media/linkedin.svg'
+import ShellHacksLogo from '../../assets/branding/ShellHacks-title.svg'
+import futuristicBuilding from '../../assets/branding/smart-city.svg'
 
-const HomePageHero = () => {
+const HomePageHero = props => {
   return (
     <div className="HomePageHero">
       <div className="HomePageHero__header">
@@ -24,13 +24,15 @@ const HomePageHero = () => {
               <div className="city mobile">
                 <img src={futuristicBuilding} alt="futuristic-building" />
               </div>
-              <a
-                href="/signUp"
-                role="button"
-                className="pre-register-btn"
-              >
-                Register Now!
-              </a>
+              {props.user ? (
+                <a href="/dashboard" role="button" className="pre-register-btn">
+                  Dashboard
+                </a>
+              ) : (
+                <a href="/signUp" role="button" className="pre-register-btn">
+                  Register Now!
+                </a>
+              )}
               <div className="button-container">
                 <a
                   className="sponsor-btn"
@@ -39,11 +41,7 @@ const HomePageHero = () => {
                 >
                   Sponsor
                 </a>
-                <a
-                  className="old-site-btn"
-                  href="https://shellhacks2019.netlify.com/"
-                  rel="_blank"
-                >
+                <a className="old-site-btn" href="https://shellhacks2019.netlify.com/" rel="_blank">
                   2019 Site
                 </a>
               </div>
@@ -60,10 +58,7 @@ const HomePageHero = () => {
                 <a href="https://twitter.com/upefiu" rel="_blank">
                   <img src={twitterLogo} alt="twitter-logo" />
                 </a>
-                <a
-                  href="https://www.linkedin.com/company/28673457"
-                  rel="_blank"
-                >
+                <a href="https://www.linkedin.com/company/28673457" rel="_blank">
                   <img src={linkedinLogo} alt="linkedin-logo" />
                 </a>
               </div>
@@ -75,7 +70,7 @@ const HomePageHero = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePageHero;
+export default HomePageHero

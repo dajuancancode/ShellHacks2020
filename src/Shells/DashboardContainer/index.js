@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import history from '../../history'
+import AuhStore from '../../store/AuthStore'
+import { AuthStoreConsumer } from '../../store/AuthStore/Context'
 import cx from 'classnames'
 import './styles.sass'
 
@@ -9,12 +12,20 @@ class DashboardContainer extends Component {
     })
   }
 
+  logout = () => {
+    this.props.store.logout()
+    history.push('/')
+  }
+
   render() {
     return (
       <div className="DashboardContainer">
         {this.props.isOpen ? (
           <div className="DashboardContainer__menu">
             <ul className="DashboardContainer__items">
+              <a href="/">
+                <li className={this.menuItemClasses('home')}>Home</li>
+              </a>
               <a href="/dashboard">
                 <li className={this.menuItemClasses('dashboard')}>Dashboard</li>
               </a>
@@ -27,6 +38,9 @@ class DashboardContainer extends Component {
             </ul>
             <div className="DashboardContainer__close-menu-btn">
               <button onClick={() => this.props.setIsOpen(false)}>x</button>
+            </div>
+            <div className="DashboardContainer__logout-btn">
+              <button onClick={this.logout}>Logout</button>
             </div>
           </div>
         ) : (
@@ -45,4 +59,12 @@ class DashboardContainer extends Component {
   }
 }
 
-export default DashboardContainer
+const HOC = props => (
+  <AuhStore>
+    <AuthStoreConsumer>
+      {store => <DashboardContainer {...props} store={store} />}
+    </AuthStoreConsumer>
+  </AuhStore>
+)
+
+export default HOC

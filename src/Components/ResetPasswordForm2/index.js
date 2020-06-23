@@ -1,24 +1,24 @@
 import React from 'react'
-import { object, reach, string } from 'yup'
-import { validEmail } from '../Util/validation'
+import { object, reach } from 'yup'
+import { validPassword } from '../Util/validation'
 import Form from '../Common/Form'
 import './styles.sass'
 
-const LoginForm = props => {
+const ResetPasswordEmail = props => {
   const inputs = [
-    {
-      name: 'email',
-      icon: 'email',
-      placeholder: 'Email Address',
-      type: 'email',
-      id: 'email'
-    },
     {
       name: 'password',
       icon: 'lock',
       placeholder: 'password',
       type: 'password',
       id: 'password'
+    },
+    {
+      name: 'confirmPassword',
+      icon: 'lock',
+      placeholder: 'Confirm Password',
+      type: 'password',
+      id: 'confirmPassword'
     }
   ]
 
@@ -26,9 +26,16 @@ const LoginForm = props => {
     input.className = 'SignUpForm__input'
   })
 
+  const validate = values => {
+    const errors = {}
+    if (values.password !== values.confirmPassword) {
+      errors.confirmPassword = 'passwords must match'
+    }
+    return errors
+  }
+
   const schema = object().shape({
-    email: validEmail(),
-    password: string().required('Password is required')
+    password: validPassword()
   })
 
   const validateHelper = async (value, path) =>
@@ -40,13 +47,12 @@ const LoginForm = props => {
       })
 
   const fieldValidation = {
-    email: async email => await validateHelper(email, 'email'),
     password: async password => await validateHelper(password, 'password')
   }
 
   const initialValues = {
-    email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   }
 
   const onSubmit = values => {
@@ -54,19 +60,15 @@ const LoginForm = props => {
   }
 
   const Footer = () => (
-    <div className="LoginForm__footer">
-      <button className="LoginForm__create-account-btn" onClick={props.handleCreateAccount}>
-        Create Account
-      </button>
-      <button className="LoginForm__forgot-password-btn" onClick={props.handleForgotPassword}>
-        Forgot Password?
-      </button>
+    <div className="LoginForm__footer" onClick={props.handleCreateAccount}>
+      <button className="LoginForm__create-account-btn">Login</button>
     </div>
   )
 
   return (
     <Form
       initialValues={initialValues}
+      validate={validate}
       onSubmit={onSubmit}
       inputs={inputs}
       buttonText={'Submit'}
@@ -78,4 +80,4 @@ const LoginForm = props => {
   )
 }
 
-export default LoginForm
+export default ResetPasswordEmail

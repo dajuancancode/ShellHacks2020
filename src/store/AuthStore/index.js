@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { AuthStoreProvider } from './Context'
 import IAMAPI from '../../API/IAMAPI'
 
@@ -21,7 +21,7 @@ const AuthStore = ({ children }) => {
     return IAMAPI.signUp(data)
       .then(({ data }) => {
         loading.set(false)
-        localStorage.setItem('ShellHacks-Auth', data.token)
+        localStorage.setItem(process.env.REACT_APP_AUTH_TOKEN, data.token)
         return true
       })
       .catch(err => {
@@ -53,7 +53,7 @@ const AuthStore = ({ children }) => {
     return IAMAPI.login(payload)
       .then(data => {
         loading.set(false)
-        localStorage.setItem('ShellHacks-Auth', data.token)
+        localStorage.setItem(process.env.REACT_APP_AUTH_TOKEN, data.token)
         return true
       })
       .catch(err => {
@@ -62,6 +62,10 @@ const AuthStore = ({ children }) => {
           err.response ? err.response.data.message : 'There was an error,please try again later'
         )
       })
+  }
+
+  const logout = () => {
+    localStorage.removeItem(process.env.REACT_APP_AUTH_TOKEN)
   }
 
   const verifyEmail = token => {
@@ -88,6 +92,30 @@ const AuthStore = ({ children }) => {
       })
   }
 
+  const resetPasswordRequest = email => {
+    return IAMAPI.resetPasswordRequest(email)
+      .then(data => {
+        return data.message
+      })
+      .catch(err => {
+        return err.response
+          ? err.response.data.message
+          : 'There was an error,please try again later'
+      })
+  }
+
+  const resetPassword = (password, token) => {
+    return IAMAPI.resetPassword(password, token)
+      .then(data => {
+        return data.message
+      })
+      .catch(err => {
+        return err.response
+          ? err.response.data.message
+          : 'There was an error,please try again later'
+      })
+  }
+
   const store = {
     user: user.value,
     loading: loading.value,
@@ -95,8 +123,11 @@ const AuthStore = ({ children }) => {
     getUser,
     login,
     signUp,
+    logout,
     verifyEmail,
-    resendVerificationEmail
+    resendVerificationEmail,
+    resetPasswordRequest,
+    resetPassword
   }
 
   return <AuthStoreProvider value={store}>{children}</AuthStoreProvider>

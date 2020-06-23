@@ -11,9 +11,12 @@ import DashboardContainer from '../../Shells/DashboardContainer'
 import './styles.sass'
 
 const ApplicationPage = ({ store }) => {
+  const [error, setError] = useState('')
   const handleSubmit = async data => {
-    const success = await store.create(data)
-    if (success) history.push('/dashboard')
+    setError('')
+    const message = await store.create(data)
+    if (message.success) history.push('/dashboard')
+    setError(message.error)
   }
   const resendVerificationEmail = e => {
     e.preventDefault()
@@ -92,7 +95,7 @@ const ApplicationPage = ({ store }) => {
           {...{
             handleSubmit,
             loading: store.loading,
-            error: store.error
+            error: error
           }}
         />
       </div>

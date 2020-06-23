@@ -285,7 +285,7 @@ const SignUpForm = props => {
     travelReinbursement: string().required(),
     attendedShellHacks: string().required(),
     howDidYouHear: string().required(),
-    resume: validPDF()
+    resume: validPDF().required()
   })
 
   const validation = values => {}
@@ -319,22 +319,22 @@ const SignUpForm = props => {
   }
 
   const initialValues = {
-    dob: '09/20/1999',
-    gender: 'Male',
-    race: 'Male',
-    phoneNumber: '786-298-4409',
-    schoolName: 'school',
-    major: 'string',
-    levelOfStudy: 'string',
-    graduationYear: 'string',
-    role: 'string',
+    dob: '',
+    gender: '',
+    race: '',
+    phoneNumber: '',
+    schoolName: '',
+    major: '',
+    levelOfStudy: '',
+    graduationYear: '',
+    role: '',
     linkedin: '',
     github: '',
     website: '',
-    dietaryRestrictions: 'string',
-    travelReinbursement: 'string',
-    attendedShellHacks: 'string',
-    howDidYouHear: 'yo',
+    dietaryRestrictions: '',
+    travelReinbursement: '',
+    attendedShellHacks: '',
+    howDidYouHear: '',
     resume: null
   }
 

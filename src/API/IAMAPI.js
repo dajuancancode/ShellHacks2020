@@ -22,12 +22,12 @@ const IAMAPI = {
       })
   },
   resetPasswordRequest: email => {
-    return client.post('/usersresetPasswordRequest', { email }).then(({ data }) => {
+    return client.post('users/resetPasswordRequest', { email }).then(({ data }) => {
       return data
     })
   },
   resetPassword: (password, token) => {
-    return client.put('users/resetPassword', { password, token }).then(({ data }) => {
+    return client.post('users/resetPassword', { password, token }).then(({ data }) => {
       return data
     })
   },

@@ -128,7 +128,7 @@ const FileInput = ({ field, form, ...props }) => {
   })
   return (
     <div className={TextInputClasses}>
-      {props.label && <label htmlFor={field.name}>{field.label}</label>}
+      {props.label && <label htmlFor={field.name}>{props.label}</label>}
       <input
         type="file"
         name={field.name}

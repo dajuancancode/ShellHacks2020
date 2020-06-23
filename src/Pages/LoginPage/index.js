@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import history from '../../history'
 import LoginForm from '../../Components/LoginForm'
 import ShellHacksLogo from '../../assets/branding/ShellHacks-title.svg'
@@ -12,7 +12,7 @@ const LoginPage = ({ store }) => {
     history.push('/signUp')
   }
   const handleForgotPassword = () => {
-    history.push('/forgotPasswordForm')
+    history.push('/resetPassword')
   }
   const handleSubmit = async data => {
     const success = await store.login(data)

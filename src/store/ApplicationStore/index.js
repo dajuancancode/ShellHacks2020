@@ -32,13 +32,14 @@ export default function ApplicationProvider({ children }) {
     return ApplicationAPI.createApplication(payload)
       .then(() => {
         loading.set(false)
-        return true
+        return { success: true }
       })
       .catch(err => {
         loading.set(false)
-        error.set(
-          err.response ? err.response.data.message : 'There was an error, please try again later'
-        )
+        const e = err.response
+          ? err.response.data.message
+          : 'There was an error, please try again later'
+        return { error: e }
       })
   }
 
