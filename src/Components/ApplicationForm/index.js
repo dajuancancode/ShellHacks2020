@@ -285,7 +285,7 @@ const SignUpForm = props => {
     travelReinbursement: string().required(),
     attendedShellHacks: string().required(),
     howDidYouHear: string().required(),
-    resume: validPDF()
+    resume: validPDF().required()
   })
 
   const validation = values => {}

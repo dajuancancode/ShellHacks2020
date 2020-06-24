@@ -4,7 +4,7 @@ import { validEmail } from '../Util/validation'
 import Form from '../Common/Form'
 import './styles.sass'
 
-const LoginForm = props => {
+const ResetPasswordEmail = props => {
   const inputs = [
     {
       name: 'email',
@@ -12,13 +12,6 @@ const LoginForm = props => {
       placeholder: 'Email Address',
       type: 'email',
       id: 'email'
-    },
-    {
-      name: 'password',
-      icon: 'lock',
-      placeholder: 'password',
-      type: 'password',
-      id: 'password'
     }
   ]
 
@@ -27,8 +20,7 @@ const LoginForm = props => {
   })
 
   const schema = object().shape({
-    email: validEmail(),
-    password: string().required('Password is required')
+    email: validEmail()
   })
 
   const validateHelper = async (value, path) =>
@@ -40,13 +32,11 @@ const LoginForm = props => {
       })
 
   const fieldValidation = {
-    email: async email => await validateHelper(email, 'email'),
-    password: async password => await validateHelper(password, 'password')
+    email: async email => await validateHelper(email, 'email')
   }
 
   const initialValues = {
-    email: '',
-    password: ''
+    email: ''
   }
 
   const onSubmit = values => {
@@ -54,13 +44,8 @@ const LoginForm = props => {
   }
 
   const Footer = () => (
-    <div className="LoginForm__footer">
-      <button className="LoginForm__create-account-btn" onClick={props.handleCreateAccount}>
-        Create Account
-      </button>
-      <button className="LoginForm__forgot-password-btn" onClick={props.handleForgotPassword}>
-        Forgot Password?
-      </button>
+    <div className="LoginForm__footer" onClick={props.handleCreateAccount}>
+      <button className="LoginForm__create-account-btn">Home</button>
     </div>
   )
 
@@ -78,4 +63,4 @@ const LoginForm = props => {
   )
 }
 
-export default LoginForm
+export default ResetPasswordEmail

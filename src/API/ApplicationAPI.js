@@ -15,11 +15,7 @@ const ApplicationAPI = {
     const application = new FormData()
 
     Object.keys(data).forEach(key => {
-      if (!data[key]) {
-        data[key] = 'N/A'
-      }
-
-      application.append(key, data[key])
+      if (data[key]) application.append(key, data[key])
     })
 
     return client({
@@ -32,10 +28,13 @@ const ApplicationAPI = {
       }
     })
   },
-  getApplication: data => {
+  getApplication: userId => {
     return client.get('/application/get', {
-      params: { userId: data.userId },
-      headers: { Authorization: data.token }
+      params: { userId },
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: getAuthToken()
+      }
     })
   }
 }

@@ -1,60 +1,79 @@
 import React from 'react'
 import { Field } from 'formik'
 import Select, { createFilter } from 'react-select'
-import { FixedSizeList as List } from "react-window";
+import { FixedSizeList as List } from 'react-window'
 import cx from 'classnames'
 
-const Input = (props) => {
+const Input = props => {
   switch (props.type) {
     case 'dropdown':
       return <DropDown {...props} />
     case 'searchable-dropdown':
       return <SearchableDropDown {...props} />
     case 'file':
-      return <FileInputWrapper {...props}/>
+      return <FileInputWrapper {...props} />
+    case 'display':
+      return <DisplayInput {...props} />
     default:
       return <TextInput {...props} />
   }
 }
 
-
-const TextInput = ({name,value,label,placeholder,className,type,id,validate})=>{
-  const TextInputClasses = cx("TextInput",{
-    [className]: className
-  })
- return (
-  <div 
-  className={TextInputClasses}>
-    {label && <label htmlFor={name} >{label}</label>}
-    <Field
-    autoComplete="on"
-    type={type}
-    name={name} 
-    id={id} 
-    value={value}  
-    placeholder={placeholder}
-    {...(validate ? {validate} : {})}
-    />
-  </div>
- )
-}
-
-const DropDown = ({ name, label, placeholder, className, id, validate,choices }) => {
-  const TextInputClasses = cx("TextInput", {
+const TextInput = ({
+  name,
+  value,
+  label,
+  placeholder,
+  className,
+  type,
+  id,
+  validate,
+  disabled = false
+}) => {
+  const TextInputClasses = cx('TextInput', {
     [className]: className
   })
   return (
-    <div
-      className={TextInputClasses}>
-      {label && <label htmlFor={name} >{label}</label>}
+    <div className={TextInputClasses}>
+      {label && <label htmlFor={name}>{label}</label>}
       <Field
-        as="select"
+        autoComplete="on"
+        type={type}
         name={name}
         id={id}
+        value={value}
+        placeholder={placeholder}
         {...(validate ? { validate } : {})}
-      >
-        <option value="" disabled selected>{placeholder}</option>
-        {choices.map((choice) => (
+        disabled={disabled}
+      />
+    </div>
+  )
+}
+
+const DisplayInput = ({ name, value, label, className }) => {
+  const TextInputClasses = cx('TextInput', {
+    [className]: className
+  })
+  return (
+    <div className={TextInputClasses}>
+      {label && <label htmlFor={name}>{label}</label>}
+      <input value={value} disabled={true} />
+    </div>
+  )
+}
+
+const DropDown = ({ name, label, placeholder, className, id, validate, choices }) => {
+  const TextInputClasses = cx('TextInput', {
+    [className]: className
+  })
+  return (
+    <div className={TextInputClasses}>
+      {label && <label htmlFor={name}>{label}</label>}
+      <Field as="select" name={name} id={id} {...(validate ? { validate } : {})}>
+        <option value="" disabled selected>
+          {placeholder}
+        </option>
+        {choices.map(choice => (
           <option value={choice.value}>{choice.label}</option>
         ))}
       </Field>
@@ -62,18 +81,15 @@ const DropDown = ({ name, label, placeholder, className, id, validate,choices })
   )
 }
 
-
 export default Input
 
-
-
-const height = 35;
+const height = 35
 
 class MenuList extends React.Component {
   render() {
-    const { options, children, maxHeight, getValue } = this.props;
-    const [value] = getValue();
-    const initialOffset = options.indexOf(value) * height;
+    const { options, children, maxHeight, getValue } = this.props
+    const [value] = getValue()
+    const initialOffset = options.indexOf(value) * height
 
     return (
       <List
@@ -84,55 +100,42 @@ class MenuList extends React.Component {
       >
         {({ index, style }) => <div style={style}>{children[index]}</div>}
       </List>
-    );
+    )
   }
 }
 
-
-
-const SelectField = ({
-  choices,
-  field,
-  form,
-  ...rest
-}) => {
+const SelectField = ({ choices, field, form, ...rest }) => {
   return (
     <Select
       {...rest}
       filterOption={createFilter({ ignoreAccents: false })}
       components={{ MenuList }}
       options={choices}
-      value = { choices? choices.find(choice => choice.value === field.value) : ''}
-      onChange = {(option) => {
+      value={choices ? choices.find(choice => choice.value === field.value) : ''}
+      onChange={option => {
         form.setFieldValue(field.name, option.value)
       }}
-      onBlur = { field.onBlur }
+      onBlur={field.onBlur}
     />
   )
 }
 
+const SearchableDropDown = props => <Field component={SelectField} {...props} />
 
-const SearchableDropDown = (props) =>(
-  <Field component={SelectField} {...props} />
-)
-
-
-
-const FileInput = ({field,form,...props}) => {
-  const TextInputClasses = cx("FileInput", {
+const FileInput = ({ field, form, ...props }) => {
+  const TextInputClasses = cx('FileInput', {
     [props.className]: props.className
   })
   return (
-    <div
-      className={TextInputClasses}>
-      {props.label && <label htmlFor={field.name} >{field.label}</label>}
+    <div className={TextInputClasses}>
+      {props.label && <label htmlFor={field.name}>{props.label}</label>}
       <input
         type="file"
         name={field.name}
         id={field.id}
-        onChange={async(event) => {
+        onChange={async event => {
           const file = await event.currentTarget.files[0]
-          form.setFieldValue(field.name,file);
+          form.setFieldValue(field.name, file)
           form.validateField(field.name)
         }}
       />
@@ -140,6 +143,6 @@ const FileInput = ({field,form,...props}) => {
   )
 }
 
-const FileInputWrapper = (props) => {
+const FileInputWrapper = props => {
   return <Field component={FileInput} {...props} />
 }
