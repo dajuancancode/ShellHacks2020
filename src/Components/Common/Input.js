@@ -64,7 +64,18 @@ const DisplayInput = ({ name, value, label, className }) => {
   )
 }
 
-const DropDown = ({ name, label, placeholder, className, id, validate, choices }) => {
+const DropDown = ({
+  name,
+  label,
+  placeholder,
+  className,
+  id,
+  validate,
+  choices,
+  errors,
+  errorsClass,
+  touched
+}) => {
   const TextInputClasses = cx('TextInput', {
     [className]: className
   })
@@ -168,8 +179,7 @@ const FileInput = ({ field, form, ...props }) => {
       type="file"
       name={field.name}
       id={field.id}
-      // eslint-disable-next-line prettier/prettier
-        onChange={async event => {
+      onChange={async event => {
         const file = await event.currentTarget.files[0]
         form.setFieldValue(field.name, file)
         form.validateField(field.name)

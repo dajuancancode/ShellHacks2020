@@ -25,7 +25,8 @@ const LoginPage = ({ store }) => {
           <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
           <p className="LoginPage__sub-title">Welcome!</p>
           <p className="LoginPage__text">
-            You're almost there! fill out your <br></br> form info and click the button below.
+            {`You're almost there! fill out your `} <br></br>{' '}
+            {`form info and click the button below.`}
           </p>
         </div>
         <LoginForm

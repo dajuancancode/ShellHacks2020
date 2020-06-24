@@ -5,6 +5,8 @@ import ResetPasswordForm2 from '../../Components/ResetPasswordForm2'
 import AuthStore from '../../store/AuthStore'
 import { AuthStoreConsumer } from '../../store/AuthStore/Context'
 
+import ShellHacksLogo from '../../assets/branding/ShellHacks-title.svg'
+
 import './styles.sass'
 
 const ResetPasswordPage = ({ store }) => {
@@ -19,9 +21,10 @@ const ResetPasswordPage = ({ store }) => {
     <div className="ResetPasswordPage">
       <div className="ResetPasswordPage__form-container">
         <div className="ResetPasswordPage__cta">
+          <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
           <p className="ResetPasswordPage__sub-title">Looks like you forgot your password!</p>
           <p className="ResetPasswordPage__text">
-            Enter your email and we'll send you a link to reset your password
+            {`Enter your email and we'll send you a link to reset your password`}
           </p>
         </div>
         <ResetPasswordForm

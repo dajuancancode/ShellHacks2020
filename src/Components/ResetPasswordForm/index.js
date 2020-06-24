@@ -9,14 +9,15 @@ const ResetPasswordEmail = props => {
     {
       name: 'email',
       icon: 'email',
-      placeholder: 'Email Address',
+      placeholder: 'yourname@name.com',
       type: 'email',
-      id: 'email'
+      id: 'email',
+      label: 'Email Address'
     }
   ]
 
   inputs.forEach(input => {
-    input.className = 'SignUpForm__input'
+    input.className = 'ResetForm__input'
   })
 
   const schema = object().shape({
@@ -43,23 +44,23 @@ const ResetPasswordEmail = props => {
     props.handleSubmit(values)
   }
 
-  const Footer = () => (
-    <div className="LoginForm__footer" onClick={props.handleCreateAccount}>
-      <button className="LoginForm__create-account-btn">Home</button>
-    </div>
-  )
-
   return (
-    <Form
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-      inputs={inputs}
-      buttonText={'Submit'}
-      className="LoginForm"
-      fieldValidation={fieldValidation}
-      Component={Footer}
-      store={props}
-    />
+    <div className="ResetPasswordPage__container">
+      <Form
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        inputs={inputs}
+        buttonText={'Submit'}
+        className="ResetForm"
+        fieldValidation={fieldValidation}
+        store={props}
+      />
+      <div className="ResetForm__footer">
+        <button className="ResetForm__home-btn" onClick={props.handleCreateAccount}>
+          Home
+        </button>
+      </div>
+    </div>
   )
 }
 

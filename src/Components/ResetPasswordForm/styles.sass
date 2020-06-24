@@ -1,15 +1,14 @@
 @import '../../sass/main.sass'
 
-.LoginForm
-  padding: 10px
+.ResetForm
   width: 100%
-  color: red
+  color: #fff
   &__input input
     background: transparent
     border: none
     width: 100%
     border: 2px solid $blue
-    border-radius: 18px
+    border-radius: 6px
     color: $grey
     font-weight: 500
     margin-bottom: 20px
@@ -17,7 +16,7 @@
   &__input input::placeholder
     color: $grey
   &__error
-    font-size: 10px
+    font-size: 16px
     margin-top: -18px
     margin-left: 5px
     margin-bottom: 6px
@@ -29,7 +28,7 @@
     flex-wrap: wrap
   &__btn-container button
     cursor: pointer
-    border-radius: 25px
+    border-radius: 6px
     padding: 15px 20px
     color: #fff
     font-weight: 700
@@ -43,12 +42,19 @@
     display: flex
     justify-content: space-between
     width: 100%
-    padding-top: 20px
-  &__create-account-btn
+  &__home-btn
+    width: 100%
     background: none
     border: 2px solid $blue
+    cursor: pointer
+    border-radius: 6px
+    padding: 15px 20px
+    color: #fff
+    font-weight: 700
+    font-size: 20px
+    letter-spacing: 1.2px
   &__status
-    margin-top: 35px
+    margin-top: 15px
     text-align: center
     color: red
   &__status .LoaderBalls

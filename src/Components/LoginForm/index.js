@@ -2,6 +2,7 @@ import React from 'react'
 import { object, reach, string } from 'yup'
 import { validEmail } from '../Util/validation'
 import Form from '../Common/Form'
+
 import './styles.sass'
 
 const LoginForm = props => {
@@ -25,7 +26,7 @@ const LoginForm = props => {
   ]
 
   inputs.forEach(input => {
-    input.className = 'LoginForm__input'
+    input.className = 'Login__input'
   })
 
   const schema = object().shape({
@@ -55,28 +56,26 @@ const LoginForm = props => {
     props.handleSubmit(values)
   }
 
-  const Footer = () => (
-    <div className="LoginForm__footer">
-      <button className="LoginForm__create-account-btn" onClick={props.handleCreateAccount}>
-        Create Account
-      </button>
-      <button className="LoginForm__forgot-password-btn" onClick={props.handleForgotPassword}>
-        Forgot Password?
-      </button>
-    </div>
-  )
-
   return (
-    <Form
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-      inputs={inputs}
-      buttonText={'Submit'}
-      className="LoginForm"
-      fieldValidation={fieldValidation}
-      Component={Footer}
-      store={props}
-    />
+    <div className="LoginPage__container">
+      <Form
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        inputs={inputs}
+        buttonText={'Submit'}
+        className="Login"
+        fieldValidation={fieldValidation}
+        store={props}
+      />
+      <div className="Login__footer">
+        <button className="Login__create-account-btn" onClick={props.handleCreateAccount}>
+          Create Account
+        </button>
+        <button className="Login__forgot-password-btn" onClick={props.handleForgotPassword}>
+          Forgot Password?
+        </button>
+      </div>
+    </div>
   )
 }
 

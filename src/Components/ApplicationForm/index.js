@@ -1,6 +1,6 @@
 import React from 'react'
 import { object, reach, string } from 'yup'
-import { validPhoneNumber, validDate, validPDF } from '../Util/validation'
+import { validPhoneNumber, validDate, validPDF, validEmail } from '../Util/validation'
 import SectionForm from '../Common/SectionForm'
 import schools from '../../config/schools.json'
 import majors from '../../config/majors.json'
