@@ -38,6 +38,30 @@ const SignUpForm = props => {
           className: ['input', 'email'].join(' ')
         },
         {
+          name: 'firstName',
+          label: 'First Name',
+          placeholder: 'First Name',
+          type: 'text',
+          id: 'firstName',
+          className: ['input', 'firstName'].join(' ')
+        },
+        {
+          name: 'lastName',
+          label: 'Last Name',
+          placeholder: 'Last Name',
+          type: 'text',
+          id: 'lastName',
+          className: ['input', 'lastName'].join(' ')
+        },
+        {
+          name: 'email',
+          label: 'School Email Address',
+          placeholder: 'School Email Address',
+          type: 'email',
+          id: 'email',
+          className: ['input', 'email'].join(' ')
+        },
+        {
           name: 'dob',
           label: 'Date of Birth',
           placeholder: 'MM/DD/YYYY',
