@@ -16,6 +16,8 @@ const TrackSection = props => {
           title="Front-End Development" 
           body="Short description of Front-end dev, including what it is, where is it used for and what are some cool examples of said development. Something to get people interested!"/>)}
       </div>
+
+      
     </div>
   )
 }

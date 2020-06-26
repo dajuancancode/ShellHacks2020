@@ -16,7 +16,7 @@ const LoginForm = props => {
     {
       name: 'password',
       icon: 'lock',
-      placeholder: 'password',
+      placeholder: 'Password',
       type: 'password',
       id: 'password'
     }
@@ -69,7 +69,7 @@ const LoginForm = props => {
       initialValues={initialValues}
       onSubmit={onSubmit}
       inputs={inputs}
-      buttonText={'Submit'}
+      buttonText={'Login'}
       className="LoginForm"
       fieldValidation={fieldValidation}
       Component={Footer}

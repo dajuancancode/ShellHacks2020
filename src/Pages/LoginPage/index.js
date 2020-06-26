@@ -22,10 +22,14 @@ const LoginPage = ({ store }) => {
     <div className="LoginPage">
       <div className="LoginPage__form-container">
         <div className="LoginPage__cta">
+          <br></br>
+          <br></br>
           <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
-          <p className="LoginPage__sub-title">Welcome!</p>
+          <br></br>
+          <br></br>
+          <p className="LoginPage__sub-title">Welcome Back!</p>
           <p className="LoginPage__text">
-            You're almost there! fill out your <br></br> form info and click the button below.
+            
           </p>
         </div>
         <LoginForm
