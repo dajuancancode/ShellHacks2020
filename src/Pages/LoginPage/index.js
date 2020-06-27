@@ -24,13 +24,17 @@ const LoginPage = ({ store }) => {
         <div className="LoginPage__cta">
           <br></br>
           <br></br>
-          <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
+          <a href="/">
+            <img
+              className="LoginPage__title"
+              src={ShellHacksLogo}
+              alt="shellhacks-hackathon-logo"
+            />
+          </a>
           <br></br>
           <br></br>
           <p className="LoginPage__sub-title">Welcome Back!</p>
-          <p className="LoginPage__text">
-            
-          </p>
+          <p className="LoginPage__text"></p>
         </div>
         <LoginForm
           {...{

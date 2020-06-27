@@ -24,13 +24,18 @@ const SignUpPage = ({ store }) => {
           <br></br>
           <br></br>
           <br></br>
-          <img className="SignUpPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" href="/home"/> 
+          <a href="/">
+            <img
+              className="SignUpPage__title"
+              src={ShellHacksLogo}
+              alt="shellhacks-hackathon-logo"
+              href="/home"
+            />{' '}
+          </a>
           <br></br>
           <br></br>
           <p className="SignUpPage__sub-title">Let's get started!</p>
-          <p className="SignUpPage__text">
-            Please fill out the form to create your account
-          </p>
+          <p className="SignUpPage__text">Please fill out the form to create your account</p>
         </div>
         <SignUpForm
           {...{

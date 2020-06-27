@@ -38,7 +38,7 @@ export const validPassword = (
 export const validPhoneNumber = (
   message = 'Phone number must be one of the following format XXX-XXX-XXXX'
 ) => {
-  return yup.string().matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, message)
+  return yup.string().matches(/^\d{3}-\d{3}-\d{4}$/, message)
 }
 
 const getValidDobRange = () => {
@@ -50,12 +50,15 @@ const getValidDobRange = () => {
 }
 
 export const validDate = (
-  format = 'Date must be in the following format DD/MM/YYYY',
-  max = 'Must be at least 18 years old',
+  max = 'Date must be in the following format DD/MM/YYYY & Must be at least 18 years old',
   required = 'Date is required'
 ) => {
   return yup
     .date()
+    .transform((_, org) => {
+      const valid = RegExp(/^[\d]{2}\/[\d]{2}\/[\d]{4}$/).test(org)
+      return valid ? _ : new Date()
+    })
     .max(new Date(getValidDobRange()), max)
     .required(required)
 }
