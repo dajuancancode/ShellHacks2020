@@ -20,7 +20,13 @@ const ResetPasswordPage = ({ store }) => {
     <div className="ResetPasswordPage">
       <div className="ResetPasswordPage__form-container">
         <div className="ResetPasswordPage__cta">
-        <img className="LoginPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
+          <a href="/">
+            <img
+              className="LoginPage__title"
+              src={ShellHacksLogo}
+              alt="shellhacks-hackathon-logo"
+            />
+          </a>
           <p className="ResetPasswordPage__sub-title">Forgot your password?</p>
           <p className="ResetPasswordPage__text">
             Enter your email and we'll send you a link to reset your password

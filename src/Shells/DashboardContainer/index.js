@@ -15,6 +15,7 @@ class DashboardContainer extends Component {
   logout = () => {
     this.props.store.logout()
     history.push('/')
+    window.location.reload()
   }
 
   render() {

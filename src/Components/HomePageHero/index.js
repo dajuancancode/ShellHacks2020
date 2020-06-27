@@ -14,7 +14,9 @@ const HomePageHero = props => {
       <div className="HomePageHero__header">
         <div className="header-inner">
           <div className="header-content">
-            <img className="title" src={ShellHacksLogo} alt="shellhacks" />
+            <a href="/">
+              <img className="title" src={ShellHacksLogo} alt="shellhacks" />
+            </a>
             <div className="sub-title">
               <h4>Florida's Largest Hackathon</h4>
               <p>

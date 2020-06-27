@@ -4,7 +4,6 @@ import { validPhoneNumber, validDate, validPDF } from '../Util/validation'
 import SectionForm from '../Common/SectionForm'
 import schools from '../../config/schools.json'
 import majors from '../../config/majors.json'
-import dietaryRestrictions from '../../config/dietaryRestrictions.json'
 import './styles.sass'
 
 const SignUpForm = props => {
@@ -232,7 +231,7 @@ const SignUpForm = props => {
           label: 'Have you attended Shellhacks before?',
           placeholder: 'Select one',
           type: 'dropdown',
-          id: 'travelReinbursement',
+          id: 'attendedShellHacks',
           className: 'dropdown',
           choices: [
             { label: 'Shellacks 2017', value: 'Shellacks 2017' },
@@ -318,8 +317,6 @@ const SignUpForm = props => {
     linkedIn: string(),
     github: string(),
     website: string(),
-    dietaryRestrictions: string().required(),
-    travelReinbursement: string().required(),
     attendedShellHacks: string().required(),
     howDidYouHear: string().required(),
     resume: validPDF().required()
@@ -354,48 +351,39 @@ const SignUpForm = props => {
     linkedIn: async s => await validateHelper(s, 'linkedIn'),
     github: async s => await validateHelper(s, 'github'),
     website: async s => await validateHelper(s, 'website'),
-    dietaryRestrictions: async s => await validateHelper(s, 'dietaryRestrictions'),
-    travelReinbursement: async s => await validateHelper(s, 'travelReinbursement'),
     attendedShellHacks: async s => await validateHelper(s, 'attendedShellHacks'),
     howDidYouHear: async s => await validateHelper(s, 'howDidYouHear'),
     resume: async s => await validateHelper(s, 'resume')
   }
 
   const initialValues = {
-    dob: '',
-    address: '',
-    address2: '',
-    city: '',
-    state: '',
-    zip: '',
-    country: '',
-    gender: '',
-    race: '',
-    phoneNumber: '',
-    schoolName: '',
-    major: '',
-    levelOfStudy: '',
-    graduationYear: '',
-    role: '',
-    linkedin: '',
-    github: '',
-    website: '',
-    dietaryRestrictions: '',
-    travelReinbursement: '',
-    attendedShellHacks: '',
-    howDidYouHear: '',
+    dob: '11/29/1995',
+    address: 's',
+    address2: 's',
+    city: 's',
+    state: 's',
+    zip: 's',
+    country: 's',
+    gender: 's',
+    race: 's',
+    phoneNumber: '123-123-1234',
+    schoolName: 's',
+    major: 's',
+    levelOfStudy: 's',
+    graduationYear: 's',
+    role: 's',
+    linkedin: 's',
+    github: 's',
+    website: 's',
+    attendedShellHacks: 's',
+    howDidYouHear: 's',
     resume: null
   }
 
   const onSubmit = values => {
+    console.log(values)
     props.handleSubmit(values)
   }
-
-  const returnBtn = () => (
-    <button onClick={props.handleReturn} className="ApplicationForm__return-btn">
-      Return
-    </button>
-  )
 
   return (
     <SectionForm
@@ -406,7 +394,6 @@ const SignUpForm = props => {
       buttonText={'Submit'}
       className="ApplicationForm"
       fieldValidation={fieldValidation}
-      //Component={returnBtn}
       store={props}
     />
   )

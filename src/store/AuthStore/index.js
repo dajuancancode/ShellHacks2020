@@ -66,6 +66,7 @@ const AuthStore = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem(process.env.REACT_APP_AUTH_TOKEN)
+    user.set(null)
   }
 
   const verifyEmail = token => {
