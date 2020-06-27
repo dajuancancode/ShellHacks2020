@@ -18,7 +18,7 @@ const HomePageHero = props => {
             <div className="sub-title">
               <h4>Florida's Largest Hackathon</h4>
               <p>
-                September 11 - 13th, 2020 <br />
+                September 25 - 27th, 2020 <br />
                 Florida International University, Miami, FL
               </p>
               <div className="city mobile">

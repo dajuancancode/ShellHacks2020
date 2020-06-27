@@ -21,6 +21,54 @@ const SignUpForm = props => {
           className: 'input'
         },
         {
+          name: 'address',
+          label: 'Address',
+          placeholder: 'Street ',
+          type: 'text',
+          id: 'street',
+          className: 'input'
+        },
+        {
+          name: 'address2',
+          label: 'Address 2 (optional)',
+          placeholder: 'Apt ',
+          type: 'text',
+          id: 'apt',
+          className: 'input'
+        },
+        {
+          name: 'city',
+          label: 'City',
+          placeholder: 'Miami',
+          type: 'text',
+          id: 'city',
+          className: 'input'
+        },
+        {
+          name: 'state',
+          label: 'State',
+          placeholder: 'FL ',
+          type: 'text',
+          id: 'state',
+          className: 'input'
+        },
+        {
+          name: 'zip',
+          label: 'Zip',
+          placeholder: '33189 ',
+          type: 'text',
+          id: 'zip',
+          className: 'input'
+        },
+        {
+          name: 'country',
+          label: 'Country',
+          placeholder: 'Country ',
+          type: 'text',
+          id: 'country',
+          className: 'input'
+        },
+        {
           name: 'gender',
           label: 'Gender',
           placeholder: 'Select one',
@@ -43,19 +91,22 @@ const SignUpForm = props => {
           className: 'dropdown',
           choices: [
             {
-              value: 'American Indian or Alaskan Native',
-              label: 'American Indian or Alaskan Native'
+              value: 'American Indian or Alaska Native',
+              label: 'American Indian or Alaska Native'
             },
             { value: 'Asian / Pacific Islander', label: 'Asian / Pacific Islander' },
+            { value: 'Black or African American', label: 'Black or African American' },
             { value: 'Hispanic or Latinx', label: 'Hispanic or Latinx' },
+            { value: 'Native Hawaiian or Pacific Islander', label: 'Asian / Pacific Islander' },
             { value: 'White / Caucasian', label: 'White / Caucasian' },
+            { value: 'Multi Racial', label: 'Multi Racial' },
             { value: 'Other', label: 'Other' },
             { value: 'Prefer not to answer', label: 'Prefer not to answer' }
           ]
         },
         {
           name: 'phoneNumber',
-          label: 'phoneNumber',
+          label: 'Phone Number',
           placeholder: '305-867-5309',
           type: 'phone',
           id: 'phoneNumber',
@@ -86,20 +137,20 @@ const SignUpForm = props => {
         },
         {
           name: 'levelOfStudy',
-          label: 'level Of Study',
+          label: 'Class Standing',
           placeholder: 'Select one',
           type: 'dropdown',
           id: 'levelOfStudy',
           className: 'dropdown',
           choices: [
-            { value: 'BootCamp Student', label: 'BootCamp Student' },
             { value: 'Freshman', label: 'Freshman' },
             { value: 'Sophmore', label: 'Sophmore' },
             { value: 'Junior', label: 'Junior' },
             { value: 'Senior', label: 'Senior' },
-            { value: 'Recent Graduate', label: 'Recent Graduate' },
             { value: 'Masters', label: 'Masters' },
-            { value: 'Ph.D', placehlabelolder: 'Ph.D' }
+            { value: 'Ph.D', label: 'Ph.D' },
+            { value: 'BootCamp Student', label: 'BootCamp Student' },
+            { value: 'Recent Graduate', label: 'Recent Graduate' }
           ]
         },
         {
@@ -134,7 +185,7 @@ const SignUpForm = props => {
           className: 'dropdown',
           choices: [
             { value: 'Artist', label: 'Artist' },
-            { value: 'Backe-end Developer', label: 'Backe-end Developer' },
+            { value: 'Back-end Developer', label: 'Back-end Developer' },
             { value: 'Data Scientist', label: 'Data Scientist' },
             { value: 'Entrepreneur', label: 'Entrepreneur' },
             { value: 'Front-end Developer', label: 'Front-end Developer' },
@@ -165,7 +216,7 @@ const SignUpForm = props => {
         },
         {
           name: 'website',
-          label: 'website',
+          label: 'Website',
           placeholder: 'https://www.coolguy.com',
           type: 'text',
           id: 'website',
@@ -177,29 +228,8 @@ const SignUpForm = props => {
       title: 'Additional Information',
       inputs: [
         {
-          name: 'dietaryRestrictions',
-          label: 'Any dietary restrictions',
-          placeholder: 'Select one',
-          type: 'dropdown',
-          id: 'dietaryResctrictions',
-          className: 'dropdown',
-          choices: dietaryRestrictions
-        },
-        {
-          name: 'travelReinbursement',
-          label: 'Need travel reinbursement?',
-          placeholder: 'Select one',
-          type: 'dropdown',
-          id: 'travelReinbursement',
-          className: 'dropdown',
-          choices: [
-            { label: 'Yes', value: true },
-            { label: 'No', value: false }
-          ]
-        },
-        {
           name: 'attendedShellHacks',
-          label: 'have yout attended Shellhacks before?',
+          label: 'Have you attended Shellhacks before?',
           placeholder: 'Select one',
           type: 'dropdown',
           id: 'travelReinbursement',
@@ -207,7 +237,8 @@ const SignUpForm = props => {
           choices: [
             { label: 'Shellacks 2017', value: 'Shellacks 2017' },
             { label: 'Shellacks 2018', value: 'Shellacks 2018' },
-            { label: 'Shellacks 2019', value: 'Shellacks 2019' }
+            { label: 'Shellacks 2019', value: 'Shellacks 2019' },
+            { label: 'This is my first time!', value: 'First Time' }
           ]
         },
         {
@@ -258,7 +289,7 @@ const SignUpForm = props => {
         },
         {
           name: 'resume',
-          label: 'resume',
+          label: 'Resume',
           placeholder: '',
           type: 'file',
           id: 'resume',
@@ -270,6 +301,12 @@ const SignUpForm = props => {
 
   const schema = object().shape({
     dob: validDate().required(),
+    address: string().required(),
+    address2: string(),
+    city: string().required(),
+    state: string().required(),
+    zip: string().required(),
+    country: string().required(),
     gender: string().required(),
     race: string().required(),
     phoneNumber: validPhoneNumber(),
@@ -300,6 +337,12 @@ const SignUpForm = props => {
 
   const fieldValidation = {
     dob: async d => await validateHelper(d, 'dob'),
+    address: async s => await validateHelper(s, 'address'),
+    address2: async s => await validateHelper(s, 'address2'),
+    city: async s => await validateHelper(s, 'city'),
+    state: async s => await validateHelper(s, 'state'),
+    zip: async s => await validateHelper(s, 'zip'),
+    country: async s => await validateHelper(s, 'country'),
     gender: async s => await validateHelper(s, 'gender'),
     race: async s => await validateHelper(s, 'race'),
     phoneNumber: async s => await validateHelper(s, 'phoneNumber'),
@@ -320,6 +363,12 @@ const SignUpForm = props => {
 
   const initialValues = {
     dob: '',
+    address: '',
+    address2: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: '',
     gender: '',
     race: '',
     phoneNumber: '',
@@ -357,7 +406,7 @@ const SignUpForm = props => {
       buttonText={'Submit'}
       className="ApplicationForm"
       fieldValidation={fieldValidation}
-      Component={returnBtn}
+      //Component={returnBtn}
       store={props}
     />
   )

@@ -34,7 +34,7 @@ const SignUpForm = props => {
     {
       name: 'password',
       icon: 'lock',
-      placeholder: 'password',
+      placeholder: 'Password',
       type: 'password',
       id: 'password'
     },
@@ -104,10 +104,11 @@ const SignUpForm = props => {
   const Footer = () => (
     <>
       <button onClick={props.handleReturn} className="SignUpForm__return-btn">
-        Return
+        Back
       </button>
+     
       <a className="SignUpForm__login-btn" href="/login">
-        Already have an account? click here to sign in
+        Already have an account? Click here to sign in
       </a>
     </>
   )
@@ -120,7 +121,7 @@ const SignUpForm = props => {
         onSubmit={onSubmit}
         className="SignUpForm"
         inputs={inputs}
-        buttonText={'Submit'}
+        buttonText={'Create Account'}
         fieldValidation={fieldValidation}
         Component={Footer}
         store={props}
