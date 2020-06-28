@@ -14,11 +14,13 @@ const HomePageHero = props => {
       <div className="HomePageHero__header">
         <div className="header-inner">
           <div className="header-content">
-            <img className="title" src={ShellHacksLogo} alt="shellhacks" />
+            <a href="/">
+              <img className="title" src={ShellHacksLogo} alt="shellhacks" />
+            </a>
             <div className="sub-title">
               <h4>Florida's Largest Hackathon</h4>
               <p>
-                September 11 - 13th, 2020 <br />
+                September 25 - 27th, 2020 <br />
                 Florida International University, Miami, FL
               </p>
               <div className="city mobile">

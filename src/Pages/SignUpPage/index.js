@@ -20,11 +20,22 @@ const SignUpPage = ({ store }) => {
     <div className="SignUpPage">
       <div className="SignUpPage__form-container">
         <div className="SignUpPage__cta">
-          <img className="SignUpPage__title" src={ShellHacksLogo} alt="shellhacks-hackathon-logo" />
-          <p className="SignUpPage__sub-title">Welcome!</p>
-          <p className="SignUpPage__text">
-            You're almost there! fill out your <br></br> form info and click the button below.
-          </p>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <a href="/">
+            <img
+              className="SignUpPage__title"
+              src={ShellHacksLogo}
+              alt="shellhacks-hackathon-logo"
+              href="/home"
+            />{' '}
+          </a>
+          <br></br>
+          <br></br>
+          <p className="SignUpPage__sub-title">Let's get started!</p>
+          <p className="SignUpPage__text">Please fill out the form to create your account</p>
         </div>
         <SignUpForm
           {...{

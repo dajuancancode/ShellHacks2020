@@ -18,7 +18,7 @@ const LoginForm = props => {
     {
       name: 'password',
       icon: 'lock',
-      placeholder: 'password',
+      placeholder: 'Password',
       type: 'password',
       id: 'password',
       label: 'Password'

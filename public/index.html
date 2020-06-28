@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Registration page for the shellhacks 2020 hackathon"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,800,900&display=swap"
-      rel="stylesheet"
-    />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Registration page for the shellhacks 2020 hackathon" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,800,900&display=swap"
+    rel="stylesheet" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -29,39 +25,45 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-    <!--  Gotta make sure this is set so things look good on mobile  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="%PUBLIC_URL%/favicon.png">
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png">
-    <meta name="msapplication-TileColor" content="#7179ed">
-    <meta name="theme-color" content="#7179ed">
+  <!--  Gotta make sure this is set so things look good on mobile  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png">
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png">
+  <meta name="msapplication-TileColor" content="#7179ed">
+  <meta name="theme-color" content="#7179ed">
 
-    <!--BEGIN Schema tags-->
-    <meta itemprop="name" content="ShellHacks">
-    <meta itemprop="description" content="A Miami-based hackathon run by FIU's UPE Chapter and open to all hackers, both local and abroad!">
-    <meta itemprop="image" content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
-    <!--END Schema tags-->
+  <!--BEGIN Schema tags-->
+  <meta itemprop="name" content="ShellHacks">
+  <meta itemprop="description"
+    content="A Miami-based hackathon run by FIU's UPE Chapter and open to all hackers, both local and abroad!">
+  <meta itemprop="image"
+    content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
+  <!--END Schema tags-->
 
-    <!--BEGIN Opengraph-->
-    <meta property="og:site_name" content="ShellHacks">
-    <meta property="og:url" content="https://shellhacks.net">
-    <meta property="og:description" content="ShellHacks is Florida’s largest hackathon, taking place September 11 - 13th at Florida International University in Miami, FL">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
-    <meta property="og:image:width" content="auto">
-    <meta property="og:image:height" content="367">
-    <!--END Opengraph-->
+  <!--BEGIN Opengraph-->
+  <meta property="og:site_name" content="ShellHacks">
+  <meta property="og:url" content="https://shellhacks.net">
+  <meta property="og:description"
+    content="ShellHacks is Florida’s largest hackathon, taking place September 11 - 13th at Florida International University in Miami, FL">
+  <meta property="og:type" content="website">
+  <meta property="og:image"
+    content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
+  <meta property="og:image:width" content="auto">
+  <meta property="og:image:height" content="367">
+  <!--END Opengraph-->
 
-    <!--BEGIN Twitter Card-->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@upefiu">
-    <meta name="twitter:title" content="ShellHacks">
-    <meta name="twitter:description" content="Florida’s largest hackathon, taking place September 11 - 13th at Florida International University in Miami, FL">
-    <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
-    <!--END Twitter Card-->
+  <!--BEGIN Twitter Card-->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@upefiu">
+  <meta name="twitter:title" content="ShellHacks">
+  <meta name="twitter:description"
+    content="Florida’s largest hackathon, taking place September 11 - 13th at Florida International University in Miami, FL">
+  <meta name="twitter:image"
+    content="https://cdn.discordapp.com/attachments/399597152516571138/691463090536972349/ShellHacks_Metadata.png">
+  <!--END Twitter Card-->
 
-    <!-- START Google Events JSON LD -->
-    <script type="application/ld+json">
+  <!-- START Google Events JSON LD -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
@@ -89,28 +91,29 @@
         "description": "Florida’s largest hackathon, taking place September 11 - 13th at Florida International University in Miami, FL"
       }
     </script>
-    <!-- END Google Events JSON LD -->
+  <!-- END Google Events JSON LD -->
 
-    <!-- START Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20916585-8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- START Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20916585-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'UA-20916585-8');
-    </script>
-    <!-- END Google Analytics -->
+    gtag('config', 'UA-20916585-8');
+  </script>
+  <!-- END Google Analytics -->
 
-    <!-- FontAwesome Kit -->
-    <script src="https://kit.fontawesome.com/77992a12f0.js" crossorigin="anonymous"></script>
+  <!-- FontAwesome Kit -->
+  <script src="https://kit.fontawesome.com/77992a12f0.js" crossorigin="anonymous"></script>
 
-    <title>ShellHacks 2020 &mdash; Sept 11 &ndash; 13</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>ShellHacks 2020 &mdash; Sept 25 &ndash; 27</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -120,5 +123,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

@@ -32,15 +32,13 @@ const HomePageWrapper = ({ store }) => {
     return <LoadingPage />
   }
 
-  if (store.user) {
-    return (
-      <DashboardContainer isOpen={isOpen} setIsOpen={setisOpen} page="home">
-        <HomePage store={store} />
-      </DashboardContainer>
-    )
-  }
-
-  return <HomePage store={store} />
+  return store.user ? (
+    <DashboardContainer isOpen={isOpen} setIsOpen={setisOpen} page="home">
+      <HomePage store={store} />
+    </DashboardContainer>
+  ) : (
+    <HomePage store={store} />
+  )
 }
 
 const HOC = () => (
